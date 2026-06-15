@@ -184,7 +184,7 @@
     <!-- ABOUT SECTION REDESIGNED -->
     <!-- ============================================ -->
     <section class="about-section py-5" id="about">
-        <div class="container">
+        <div class="container px-2 px-md-3">
             <!-- Centered Header -->
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
@@ -1684,12 +1684,33 @@
                 </div>
 
                 <!-- Box 4: Testimonial -->
-                <div
-                    class="scaling-box testimonial-box bg-white p-4 shadow-sm d-flex flex-column justify-content-between">
-                    <h5 class="fw-bold text-secondary mb-3">JRAM GROUPS</h5>
-                    <p class="text-muted small mb-3">"Since adding the AI assistant to our store, our support load has
-                        dropped by nearly 60% Customers now get instant answers about supplements, dosages."</p>
-                    <p class="fw-bold small mb-0">&mdash; Founder - Jeyaraman</p>
+                <div class="scaling-box testimonial-box bg-white p-4 shadow-sm overflow-hidden">
+                    <h5 class="fw-bold mb-4">Get found on Google</h5>
+                    <div class="google-mockup-container">
+                        <div class="google-search-bar shadow-sm">
+                            <span class="g-icon text-primary fw-bold fs-5">G</span>
+                            <div class="search-text-wrapper">
+                                <span id="typingSearchText" class="text-muted"></span><span
+                                    class="cursor-blink">|</span>
+                            </div>
+                            <i class="fa-solid fa-microphone text-muted"></i>
+                        </div>
+                        <div class="google-suggest-box shadow-sm mt-2">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <div class="suggest-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width:24px;height:24px;font-size:12px;"><i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold small text-dark lh-1" id="suggestTitle">JRAM GROUPS</div>
+                                    <div class="text-muted" style="font-size:0.7rem;">www.jramgroups.com > services
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fw-bold text-dark small mb-2">All in one outbound platform</div>
+                            <div class="sk-line bg-light w-75 rounded mb-1" style="height:8px;"></div>
+                            <div class="sk-line bg-light w-50 rounded" style="height:8px;"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Box 5: Tech -->
@@ -1869,7 +1890,8 @@
     <!-- ============================================ -->
     <!-- WHAT WE DO SECTION -->
     <!-- ============================================ -->
-    <section class="what-we-do-section py-5 bg-light" id="whatwedo">
+    <!-- 
+    <section class="what-we-do-section py-5 bg-light d-none" id="whatwedo">
         <div class="container py-4">
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-8 text-center">
@@ -1881,7 +1903,7 @@
 
             <div class="wwd-bento-grid">
                 <!-- Grid 1: Design and Dev -->
-                <div class="wwd-box wwd-design dark-box d-flex flex-column">
+    <!-- <div class="wwd-box wwd-design dark-box d-flex flex-column">
                     <div class="browser-mockup flex-grow-1">
                         <div class="browser-header">
                             <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
@@ -1907,14 +1929,14 @@
                         <button class="btn-wwd-pricing"><i class="fa-solid fa-braille text-warning"></i> View
                             pricing</button>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Grid 2: Regular updates -->
+    <!-- Grid 2: Regular updates -
                 <div class="wwd-box wwd-updates light-box">
                     <h5 class="fw-bold mb-4 w-75">Regular updates and progress tracking</h5>
                     <div class="updates-cards-wrapper">
                         <div class="updates-cards-container">
-                            <!-- Card 1: Figma Design Status -->
+                            <!-- Card 1: Figma Design Status -
                             <div class="updates-notification-card active">
                                 <div class="updates-card-left">
                                     <div class="updates-logo">
@@ -1928,7 +1950,7 @@
                                     <i class="fa-solid fa-check text-success"></i>
                                 </button>
                             </div>
-                            <!-- Card 2: GitHub / Deployment Status -->
+
                             <div class="updates-notification-card second">
                                 <div class="updates-card-left">
                                     <div class="updates-logo">
@@ -1942,7 +1964,7 @@
                                     <i class="fa-solid fa-code-merge text-primary"></i>
                                 </button>
                             </div>
-                            <!-- Card 3: Slack Notification / Project Live -->
+                            
                             <div class="updates-notification-card third">
                                 <div class="updates-card-left">
                                     <div class="updates-logo">
@@ -1960,13 +1982,13 @@
                     </div>
                 </div>
 
-                <!-- Grid 3: Hosting & Deployment -->
+                 Grid 3: Hosting & Deployment 
                 <div class="wwd-box wwd-hosting dark-box overflow-hidden position-relative">
                     <h5 class="text-white fw-bold position-relative z-1 mb-0">Hosting, Deployment & Maintenance</h5>
                     <div class="map-container position-absolute w-100 h-100 top-0 start-0">
                         <div class="dotted-map"></div>
-                        <!-- Animated Nodes -->
-                        <div class="map-node n1"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+            
+                        <!-- <div class="map-node n1"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
                         </div>
                         <div class="map-node n2"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
                         </div>
@@ -1977,10 +1999,10 @@
                         <div class="map-pulse p1"></div>
                         <div class="map-pulse p2"></div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Grid 4: Google Search -->
-                <div class="wwd-box wwd-seo light-box overflow-hidden">
+    <!-- Grid 4: Google Search -->
+    <!-- <div class="wwd-box wwd-seo light-box overflow-hidden">
                     <h5 class="fw-bold mb-4">Get found on Google</h5>
                     <div class="google-mockup-container">
                         <div class="google-search-bar shadow-sm">
@@ -2007,11 +2029,11 @@
                             <div class="sk-line bg-light w-50 rounded" style="height:8px;"></div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Grid 5: Components & Dashboards -->
-                <div class="wwd-box wwd-components dark-box position-relative overflow-hidden" id="geminiBox">
-                    <h5 class="fw-bold position-relative z-1 mb-0 w-75 text-white">Quality and Maintainance</h5>
+    <!-- Grid 5: Components & Dashboards -->
+    <!-- <div class="wwd-box wwd-components dark-box position-relative overflow-hidden" id="geminiBox"> -->
+    <!-- <h5 class="fw-bold position-relative z-1 mb-0 w-75 text-white">Quality and Maintainance</h5>
                     <div class="gemini-svg-container position-absolute top-0 start-0 w-100 h-100">
                         <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" class="gemini-svg">
                             <defs>
@@ -2019,7 +2041,7 @@
                                     <feGaussianBlur stdDeviation="10" />
                                 </filter>
                             </defs>
-                            <!-- Glow Lines -->
+    
                             <path class="gemini-blur" stroke="#ffb7c5"
                                 d="M0 650 C250 650 350 450 500 500 C700 560 700 400 900 500 C1100 600 1200 650 1440 650" />
                             <path class="gemini-blur" stroke="#ffd6a5"
@@ -2030,7 +2052,7 @@
                                 d="M0 420 C250 420 320 560 520 520 C720 470 720 470 920 520 C1120 560 1220 420 1440 420" />
                             <path class="gemini-blur" stroke="#076eff"
                                 d="M0 350 C250 350 320 500 520 520 C700 540 700 420 920 500 C1100 600 1200 350 1440 350" />
-                            <!-- Animated Lines -->
+        
                             <path class="gemini-animated" stroke="#ffb7c5"
                                 d="M0 650 C250 650 350 450 500 500 C700 560 700 400 900 500 C1100 600 1200 650 1440 650" />
                             <path class="gemini-animated" stroke="#ffd6a5"
@@ -2041,12 +2063,14 @@
                                 d="M0 420 C250 420 320 560 520 520 C720 470 720 470 920 520 C1120 560 1220 420 1440 420" />
                             <path class="gemini-animated" stroke="#076eff"
                                 d="M0 350 C250 350 320 500 520 520 C700 540 700 420 920 500 C1100 600 1200 350 1440 350" />
-                        </svg>
+                        </svg> 
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
-    </section>
+    -->
+    </section> 
+     
 
     <!-- ============================================ -->
     <!-- TESTIMONIAL SECTION: WALL OF LOVE -->
@@ -2062,10 +2086,10 @@
             </div>
 
             <div class="testimonial-grid-vertical">
-                <!-- COLUMN 1: UP -->
+
                 <div class="testimonial-column col-up">
                     <div class="testimonial-track-vertical">
-                        <!-- Card 1 -->
+
                         <div class="testimonial-card-premium mb-4">
                             <div class="test-quote"><i class="fa-solid fa-quote-left"></i></div>
                             <div class="test-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i

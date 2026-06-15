@@ -1176,6 +1176,7 @@ html {
 
     .about-visual-wrapper {
         margin-bottom: 50px;
+        padding: 0;
     }
 }
 
@@ -5176,7 +5177,7 @@ ul {
         zoom: 0.55;
     }
 }
-
+@media (max-width: 991px) {
     .services-sticky-section {
         height: auto !important;
     }
