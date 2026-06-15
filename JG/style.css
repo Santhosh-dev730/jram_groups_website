@@ -5157,6 +5157,26 @@ ul {
         min-height: 440px;
     }
 
+    .interactive-mockup.ecommerce-mockup, 
+    .interactive-mockup.analytics-mockup,
+    .interactive-mockup#mobileMockupWindow {
+        /* Other mockups might not need as much scaling */
+        zoom: 0.85;
+    }
+}
+
+@media (max-width: 768px) {
+    .interactive-mockup {
+        zoom: 0.7;
+    }
+}
+
+@media (max-width: 480px) {
+    .interactive-mockup {
+        zoom: 0.55;
+    }
+}
+
     .services-sticky-section {
         height: auto !important;
     }
