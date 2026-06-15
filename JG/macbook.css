@@ -1,0 +1,244 @@
+/* =========================================================================
+   STRAIGHT MACBOOK HERO SHOWCASE
+   ========================================================================= */
+
+.macbook-showcase {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start; /* Align to the top instead of center */
+    justify-content: flex-end; /* Move to the right */
+    padding: 0px 40px 20px 20px; /* Removed top padding to fix empty space */
+    z-index: 10;
+    margin-top: -30px; /* Pull the showcase up slightly to fill the empty space */
+}
+
+@media (max-width: 992px) {
+    .macbook-showcase {
+        justify-content: center; /* Center on smaller screens */
+        padding: 20px;
+        margin-top: 20px;
+    }
+}
+
+.macbook-straight-assembly {
+    position: relative;
+    width: 100%;
+    max-width: 480px; /* Reduced from 600px to fit perfectly in col-5 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: max-width 1s cubic-bezier(0.25, 1, 0.5, 1), transform 0.1s ease-out;
+    transform-style: preserve-3d;
+    perspective: 1500px;
+}
+
+/* ================== MORPHING DEVICE STATES ================== */
+
+/* Laptop State (Default fallback if no class, but explicit here) */
+.macbook-straight-assembly.state-laptop { max-width: 480px; }
+.macbook-straight-assembly.state-laptop .macbook-screen-frame {
+    aspect-ratio: 16 / 10;
+    border-radius: 20px 20px 0 0;
+    padding: 15px;
+}
+.macbook-straight-assembly.state-laptop .macbook-bottom-base {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Tablet State */
+.macbook-straight-assembly.state-tablet { max-width: 360px; } /* Reduced from 450px */
+.macbook-straight-assembly.state-tablet .macbook-screen-frame {
+    aspect-ratio: 4 / 5; /* Reduced height (was 3/4) */
+    border-radius: 30px;
+    padding: 20px;
+}
+.macbook-straight-assembly.state-tablet .macbook-bottom-base {
+    opacity: 0;
+    transform: scale(0.8) translateY(-20px);
+    pointer-events: none;
+}
+
+/* Mobile State */
+.macbook-straight-assembly.state-mobile { max-width: 250px; } /* Increased from 220px */
+.macbook-straight-assembly.state-mobile .macbook-screen-frame {
+    aspect-ratio: 9 / 16; /* Reduced height from 19.5 */
+    border-radius: 30px;
+    padding: 12px;
+}
+.macbook-straight-assembly.state-mobile .macbook-bottom-base {
+    opacity: 0;
+    transform: scale(0.6) translateY(-40px);
+    pointer-events: none;
+}
+
+/* Responsive UI fixes for mobile state */
+.macbook-straight-assembly.state-mobile .dash-row {
+    flex-direction: column;
+    gap: 10px;
+}
+.macbook-straight-assembly.state-mobile .dash-card { padding: 10px; }
+.macbook-straight-assembly.state-mobile .dash-value { font-size: 16px; margin-bottom: 5px; }
+.macbook-straight-assembly.state-mobile .dash-title { font-size: 9px; margin-bottom: 3px; }
+.macbook-straight-assembly.state-mobile .dash-main-chart { padding: 10px; }
+.macbook-straight-assembly.state-mobile .dash-circles i { width: 8px; height: 8px; }
+.macbook-straight-assembly.state-mobile .dash-header span { font-size: 11px; }
+
+/* ================== LAPTOP LID & SCREEN ================== */
+.macbook-screen-frame {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #000;
+    border-radius: 20px 20px 0 0;
+    padding: 15px; /* Bezel width */
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15), inset 0 0 0 2px #a3a8af;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: aspect-ratio 1s cubic-bezier(0.25, 1, 0.5, 1), border-radius 1s cubic-bezier(0.25, 1, 0.5, 1), padding 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.camera-hole {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    box-shadow: inset 0 0 2px #000;
+    z-index: 20;
+}
+
+/* ================== SCREEN CONTENT ================== */
+.screen-content {
+    width: 100%;
+    height: 100%;
+    background: #f8fafc;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dashboard UI */
+.dash-header {
+    height: 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+.dash-circles { display: flex; gap: 6px; margin-right: 15px; }
+.dash-circles i { width: 10px; height: 10px; border-radius: 50%; background: #e2e8f0; }
+.dash-circles i:nth-child(1) { background: #ef4444; }
+.dash-circles i:nth-child(2) { background: #f59e0b; }
+.dash-circles i:nth-child(3) { background: #22c55e; }
+.dash-header span { font-size: 13px; font-weight: 600; color: #475569; margin: 0 auto; }
+
+.dash-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+.dash-row {
+    display: flex;
+    gap: 15px;
+}
+.dash-card {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    border: 1px solid #f1f5f9;
+}
+.dash-title { font-size: 11px; color: #64748b; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+.dash-value { font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 10px; }
+.dash-bar { width: 100%; height: 6px; background: #f1f5f9; border-radius: 3px; overflow: hidden; }
+.dash-bar .fill { height: 100%; background: #3b82f6; border-radius: 3px; }
+
+.dash-main-chart {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    border: 1px solid #f1f5f9;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.chart-line { width: 100%; height: 1px; background: #f1f5f9; }
+.chart-overlay {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 60%;
+    background: linear-gradient(to top, rgba(59, 130, 246, 0.2), transparent);
+    border-top: 2px solid #3b82f6;
+    clip-path: polygon(0 100%, 0 40%, 20% 60%, 40% 20%, 60% 50%, 80% 10%, 100% 30%, 100% 100%);
+}
+
+/* ================== LAPTOP BASE ================== */
+.macbook-bottom-base {
+    width: 115%;
+    height: 25px;
+    background: linear-gradient(to bottom, #d1d5db, #9ca3af);
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    margin-top: -2px; /* Overlap slightly with screen */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255,0.4);
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    transition: opacity 0.8s ease, transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.thumb-groove {
+    width: 15%;
+    height: 8px;
+    background: #9ca3af;
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* ================== FLOATING BADGES ================== */
+.glass-badge {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 20;
+    animation: floatBadge 4s ease-in-out infinite alternate;
+}
+
+.badge-1 { top: -20px; left: -20px; animation-delay: 0s; }
+.badge-2 { top: 40%; right: -40px; animation-delay: -1.5s; }
+.badge-3 { bottom: 40px; left: -30px; animation-delay: -3s; }
+
+@keyframes floatBadge {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+@media (max-width: 992px) {
+    .macbook-showcase { margin-top: 50px; }
+    .badge-2 { right: -10px; }
+}
