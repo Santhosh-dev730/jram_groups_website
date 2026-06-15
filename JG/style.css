@@ -3423,6 +3423,19 @@ ul {
     background-color: #e2e8f0;
 }
 
+@media (max-width: 768px) {
+    .git-cards-container {
+        justify-content: center;
+        gap: 20px;
+    }
+    .git-divider {
+        display: none;
+    }
+    .git-card {
+        flex: 0 0 40%;
+    }
+}
+
 .git-try-tooltip {
     position: absolute;
     bottom: -35px;
@@ -4141,6 +4154,9 @@ ul {
             "hosting"
             "seo"
             "components";
+    }
+    .wwd-box.wwd-hosting, .wwd-box.wwd-components {
+        min-height: 250px;
     }
 }
 
