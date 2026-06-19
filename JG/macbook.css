@@ -225,11 +225,42 @@
 }
 .l-process-title { font-size: 18px; font-weight: 800; color: #0f172a; text-align: center; }
 .l-steps { display: flex; flex-direction: column; gap: 10px; }
-.l-step { display: flex; align-items: center; gap: 15px; background: #f1f5f9; padding: 10px 15px; border-radius: 8px; }
-.l-step-num { width: 26px; height: 26px; background: #6248ff; color: #fff; font-size: 12px; font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 10px rgba(98, 72, 255, 0.3); }
-.l-step-info { display: flex; flex-direction: column; gap: 2px; }
-.l-step-name { font-size: 12px; font-weight: 700; color: #0f172a; }
-.l-step-desc { font-size: 9px; color: #64748b; }
+.l-step { 
+    position: relative;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: #f1f5f9; 
+    padding: 10px 15px; 
+    border-radius: 8px; 
+}
+.l-step-num { 
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px; 
+    height: 26px; 
+    background: #6248ff; 
+    color: #fff; 
+    font-size: 12px; 
+    font-weight: 700; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-shrink: 0; 
+    box-shadow: 0 4px 10px rgba(98, 72, 255, 0.3); 
+}
+.l-step-info { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 2px; 
+    text-align: center;
+    width: 100%;
+}
+.l-step-name { font-size: 12px; font-weight: 700; color: #0f172a; text-align: center; }
+.l-step-desc { font-size: 9px; color: #64748b; text-align: center; }
 
 /* ================== TABLET UI (Creative Portfolio) ================== */
 .ui-tablet {
@@ -497,6 +528,7 @@
         border-radius: 6px !important;
     }
     .l-step-num {
+        left: 10px !important;
         width: 20px !important;
         height: 20px !important;
         font-size: 10px !important;
