@@ -85,6 +85,25 @@
 
     <section class="hero premium-hero position-relative overflow-hidden">
         <canvas id="dotCanvas" class="hero-canvas"></canvas>
+
+        <!-- Animated Data Flow (Center Background) -->
+        <div class="data-flow d-none d-lg-block">
+            <!-- Curved connecting lines -->
+            <svg class="data-line dl-1" viewBox="0 0 400 200" preserveAspectRatio="none">
+                <path d="M 0,100 C 150,180 250,20 400,100" />
+            </svg>
+            <svg class="data-line dl-2" viewBox="0 0 400 200" preserveAspectRatio="none">
+                <path d="M 0,50 C 200,150 200,0 400,150" />
+            </svg>
+            
+            <!-- Flowing particles -->
+            <div class="data-particle dp-1"></div>
+            <div class="data-particle dp-2"></div>
+            <div class="data-particle dp-3"></div>
+            <div class="data-particle dp-4"></div>
+            <div class="data-particle dp-5"></div>
+        </div>
+
         <div class="container position-relative py-5" style="z-index: 2;">
             <div class="row align-items-center">
                 <div class="col-lg-7 col-md-12 mb-5 mb-lg-0">
@@ -120,43 +139,110 @@
                     <div class="macbook-showcase" id="macbookWrapper">
                         <div class="macbook-straight-assembly">
 
-                            <!-- Floating Badges -->
-                            <div class="glass-badge badge-1">UI/UX Design</div>
-                            <div class="glass-badge badge-2">Website Dev</div>
-                            <div class="glass-badge badge-3">Mobile Apps</div>
+
 
                             <!-- Screen Frame -->
                             <div class="macbook-screen-frame">
-                                <div class="camera-hole"></div>
+                                <div class="camera-hole"><span class="island-text"><i class="fa-solid fa-bell text-white me-1"></i> Jram Groups</span></div>
                                 <div class="screen-content">
-                                    <!-- Dashboard UI -->
-                                    <div class="dash-header">
-                                        <div class="dash-circles"><i></i><i></i><i></i></div>
-                                        <span>Jram groups</span>
-                                    </div>
-                                    <div class="dash-body">
-                                        <div class="dash-row">
-                                            <div class="dash-card">
-                                                <div class="dash-title">Total Revenue</div>
-                                                <div class="dash-value">$42,500</div>
-                                                <div class="dash-bar">
-                                                    <div class="fill" style="width:75%"></div>
+                                    <!-- UI: Laptop (Website Procedure) -->
+                                    <div class="device-ui ui-laptop">
+                                        <div class="l-header">
+                                            <div class="dash-circles"><i></i><i></i><i></i></div>
+                                            <div class="l-nav-title">Jram Groups Process</div>
+                                            <div class="l-btn"><i class="fa-solid fa-play"></i> Start</div>
+                                        </div>
+                                        <div class="l-process-body">
+                                            <div class="l-process-title">How we build your website</div>
+                                            <div class="l-steps">
+                                                <div class="l-step">
+                                                    <div class="l-step-num">1</div>
+                                                    <div class="l-step-info">
+                                                        <div class="l-step-name">Discovery & UI/UX</div>
+                                                        <div class="l-step-desc">Wireframing and user journey planning.</div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="dash-card">
-                                                <div class="dash-title">Active Projects</div>
-                                                <div class="dash-value">12</div>
-                                                <div class="dash-bar">
-                                                    <div class="fill" style="width:40%; background:#f97316;"></div>
+                                                <div class="l-step">
+                                                    <div class="l-step-num">2</div>
+                                                    <div class="l-step-info">
+                                                        <div class="l-step-name">Development</div>
+                                                        <div class="l-step-desc">Writing clean, responsive frontend and backend code.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="l-step">
+                                                    <div class="l-step-num">3</div>
+                                                    <div class="l-step-info">
+                                                        <div class="l-step-name">Testing & Launch</div>
+                                                        <div class="l-step-desc">Speed optimization, QA, and final deployment.</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="dash-main-chart">
-                                            <div class="chart-line"></div>
-                                            <div class="chart-line"></div>
-                                            <div class="chart-line"></div>
-                                            <div class="chart-line"></div>
-                                            <div class="chart-overlay"></div>
+                                    </div>
+
+                                    <!-- UI: Tablet (Creative Portfolio) -->
+                                    <div class="device-ui ui-tablet">
+                                        <div class="tablet-header">
+                                            <div class="t-logo-text"><i class="fa-solid fa-cubes"></i> Jram Groups</div>
+                                            <div class="t-nav"><span class="t-nav-text active">Work</span><span
+                                                    class="t-nav-text">About</span></div>
+                                        </div>
+                                        <div class="tablet-hero">
+                                            <div class="t-hero-title">Creative Agency</div>
+                                            <div class="t-hero-subtitle">Delivering high-end solutions</div>
+                                            <div class="t-hero-btn-text">View Work</div>
+                                        </div>
+                                        <div class="tablet-grid">
+                                            <div class="t-grid-item"
+                                                style="background: #e2e8f0; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:bold; color:#475569;">
+                                                UI/UX</div>
+                                            <div class="t-grid-item"
+                                                style="background: #f8fafc; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:bold; color:#475569;">
+                                                Web</div>
+                                            <div class="t-grid-item"
+                                                style="background: #cbd5e1; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:bold; color:#475569;">
+                                                App</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- UI: Mobile (Client App) -->
+                                    <div class="device-ui ui-mobile">
+                                        <div class="m-header">
+                                            <div class="m-avatar-text"><i class="fa-solid fa-circle-user"></i> Hi,
+                                                Client</div>
+                                            <div class="m-icons"><i class="fa-solid fa-bell"></i></div>
+                                        </div>
+                                        <div class="m-balance-card">
+                                            <div class="m-title">Jram Groups Project</div>
+                                            <div class="m-balance">75% Completed</div>
+                                            <div class="m-stats">On track for delivery</div>
+                                        </div>
+                                        <div class="m-actions">
+                                            <div class="m-action-btn"><i class="fa-solid fa-message"></i></div>
+                                            <div class="m-action-btn"><i class="fa-solid fa-file-invoice"></i></div>
+                                            <div class="m-action-btn"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                                            <div class="m-action-btn"><i class="fa-solid fa-ellipsis"></i></div>
+                                        </div>
+                                        <div class="m-list">
+                                            <div class="m-list-title">Recent Updates</div>
+                                            <div class="m-list-item">
+                                                <div class="m-item-icon bg-orange-soft"><i
+                                                        class="fa-solid fa-code text-orange"></i></div>
+                                                <div class="m-item-info">
+                                                    <div class="m-item-name">Frontend Dev</div>
+                                                    <div class="m-item-date">Today</div>
+                                                </div>
+                                                <div class="m-item-amt" style="color: #22c55e;">Done</div>
+                                            </div>
+                                            <div class="m-list-item">
+                                                <div class="m-item-icon bg-blue-soft"><i
+                                                        class="fa-solid fa-pen-nib text-blue"></i></div>
+                                                <div class="m-item-info">
+                                                    <div class="m-item-name">UI Design</div>
+                                                    <div class="m-item-date">Yesterday</div>
+                                                </div>
+                                                <div class="m-item-amt" style="color: #22c55e;">Done</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1721,14 +1807,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
     <!-- ============================================ -->
     <!-- PROJECTS BENTO GRID -->
     <!-- ============================================ -->

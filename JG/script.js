@@ -2337,5 +2337,4 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
-
 });
