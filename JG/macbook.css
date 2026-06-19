@@ -25,6 +25,9 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .macbook-straight-assembly.state-mobile {
+        max-width: 260px;
+    }
 }
 
 .macbook-straight-assembly {
@@ -450,9 +453,15 @@
    RESPONSIVE SCALING FOR DEVICE MOCKUPS (LAPTOP, TABLET, MOBILE) ON MOBILE VIEWPORTS
    ========================================================================= */
 @media (max-width: 576px) {
-    /* Prevent the 115% wide laptop base from extending beyond screen margins */
+    /* Set larger max-widths for laptop, tablet, and mobile mockups on mobile screens */
     .macbook-straight-assembly.state-laptop {
-        max-width: 85%;
+        max-width: 92%;
+    }
+    .macbook-straight-assembly.state-tablet {
+        max-width: 88%;
+    }
+    .macbook-straight-assembly.state-mobile {
+        max-width: 260px;
     }
 
     .macbook-screen-frame {
