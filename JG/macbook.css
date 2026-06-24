@@ -805,18 +805,21 @@
    RESPONSIVE SCALING FOR DEVICE MOCKUPS (LAPTOP, TABLET, MOBILE) ON MOBILE VIEWPORTS
    ========================================================================= */
 @media (max-width: 576px) {
+    .macbook-showcase {
+        height: 320px;
+    }
 
     /* Set larger max-widths for laptop, tablet, and mobile mockups on mobile screens */
     .macbook-straight-assembly.state-laptop {
-        max-width: 92%;
+        max-width: 85%;
     }
 
     .macbook-straight-assembly.state-tablet {
-        max-width: 88%;
+        max-width: 220px;
     }
 
     .macbook-straight-assembly.state-mobile {
-        max-width: 260px;
+        max-width: 180px;
     }
 
     .macbook-screen-frame {
