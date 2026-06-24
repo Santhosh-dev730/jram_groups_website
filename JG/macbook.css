@@ -65,7 +65,7 @@
     margin-right: 40px;
 } /* Increased width */
 .macbook-straight-assembly.state-tablet .macbook-screen-frame {
-    aspect-ratio: 4 / 5.2; /* Increased height */
+    aspect-ratio: 4 / 4.6; /* Reduced height */
     border-radius: 30px;
     padding: 20px;
 }

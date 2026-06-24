@@ -20,7 +20,7 @@ html {
 
 
 :root {
-    --font-family--: font-family: "Manrope", sans-serif;
+    --font-family--: "Manrope", sans-serif;
 }
 
 /* Page load animation */
@@ -804,7 +804,7 @@ html {
 
 .progress-section {
     padding: 10px 0px;
-    font-family: Arial, sans-serif;
+    font-family: "Manrope", sans-serif;
 }
 
 .progress-container {
@@ -2522,6 +2522,7 @@ ul {
 .footer-section {
     background: #151414;
     position: relative;
+    padding-top: 40px; /* Increased footer height padding */
 }
 
 .footer-cta {
@@ -2596,7 +2597,7 @@ ul {
     display: block;
     font-size: 20px;
     font-weight: 700;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Manrope", sans-serif;
     margin-bottom: 20px;
 }
 
@@ -2612,6 +2613,19 @@ ul {
     text-align: center;
     line-height: 38px;
     border-radius: 50%;
+}
+
+.social-white-icons i {
+    height: auto;
+    width: auto;
+    line-height: normal;
+    font-size: 22px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-white-icons i:hover {
+    color: #f4b400; /* Use highlight color on hover */
 }
 
 .facebook-bg {
@@ -2649,9 +2663,8 @@ ul {
 }
 
 .footer-widget ul li {
-    display: inline-block;
-    float: left;
-    width: 50%;
+    display: block;
+    width: 100%;
     margin-bottom: 12px;
 }
 
@@ -3358,6 +3371,15 @@ ul {
     color: #333;
     position: relative;
     z-index: 2;
+}
+
+@media (max-width: 991px) {
+    .git-main-title {
+        font-size: 1.8rem;
+    }
+    .git-main-title span {
+        white-space: normal !important;
+    }
 }
 
 .badge-ai {
@@ -4084,7 +4106,7 @@ ul {
 
 .tech-icons-track {
     width: max-content;
-    animation: scrollTech 15s linear infinite;
+    animation: scrollTech 45s linear infinite;
 }
 
 @keyframes scrollTech {
@@ -4093,7 +4115,7 @@ ul {
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% - 0.5rem)); /* Offset half of the gap (gap-3 is 1rem, half is 0.5rem) */
     }
 }
 
