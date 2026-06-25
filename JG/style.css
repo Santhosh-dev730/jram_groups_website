@@ -7,10 +7,18 @@
 
 /* Smooth transition for dark mode */
 body {
-    background: #fcf9f6;
+    background: linear-gradient(180deg, 
+        rgba(252, 246, 255, 1) 0%,     /* Light pastel purple */
+        rgba(224, 247, 255, 1) 20%,    /* Light cyan */
+        rgba(224, 255, 238, 1) 40%,    /* Soft mint green */
+        rgba(255, 249, 219, 1) 60%,    /* Light yellow */
+        rgba(255, 238, 224, 1) 80%,    /* Light peach/orange */
+        rgba(255, 255, 255, 1) 100%    /* White */
+    );
+    background-size: 100% auto;
+    background-repeat: no-repeat;
     transition: background 0.4s ease, color 0.4s ease;
     overflow-x: hidden;
-    /* height:2000px; */
 }
 
 html {
@@ -931,7 +939,7 @@ html {
 .about-section {
     position: relative;
     padding: 50px 0;
-    background: #ffffff;
+    background: transparent;
     overflow: hidden;
     z-index: 1;
 }
@@ -1926,7 +1934,7 @@ html {
 
 .testimonial-section-vertical {
     padding: 100px 0;
-    background: #ffffff;
+    background: transparent;
     overflow: hidden;
 }
 
@@ -3388,7 +3396,7 @@ ul {
 
 /* GET IN TOUCH SECTION REDESIGNED */
 .get-in-touch-section {
-    background-color: #fafbfc;
+    background-color: transparent;
     position: relative;
     overflow: hidden;
     padding-bottom: 80px;
@@ -3681,7 +3689,7 @@ ul {
     /* Adjusted to shift content up */
     display: flex;
     align-items: center;
-    background-color: #ffffff;
+    background-color: transparent;
     overflow: hidden;
 }
 
@@ -3917,7 +3925,7 @@ ul {
 /* SCALING SUCCESSFUL COMPANIES BENTO GRID   */
 /* ========================================= */
 .scaling-companies-section {
-    background-color: #f2f0eb;
+    background-color: transparent;
 }
 
 .scaling-title {
@@ -4193,7 +4201,7 @@ ul {
 /* WHAT WE DO SECTION                        */
 /* ========================================= */
 .what-we-do-section {
-    background-color: #f1efec;
+    background-color: transparent;
     /* matching other sections */
 }
 
@@ -4666,7 +4674,7 @@ ul {
 /* ========================================= */
 
 .project-bento-section {
-    background-color: #f1efec;
+    background-color: transparent;
     padding-top: 100px !important;
     padding-bottom: 80px !important;
 }
@@ -5168,7 +5176,7 @@ ul {
 /* STICKY HORIZONTAL SLIDER COMPONENT */
 .services-sticky-section {
     position: relative;
-    background: #fdfbf7;
+    background: transparent;
     height: 100vh;
     z-index: 2;
     /* ScrollTrigger will manage pinning duration and spacer height */
