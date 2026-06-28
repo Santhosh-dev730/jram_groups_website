@@ -7,14 +7,20 @@
 
 /* Smooth transition for dark mode */
 body {
-    background: linear-gradient(180deg, 
-        rgba(252, 246, 255, 1) 0%,     /* Light pastel purple */
-        rgba(224, 247, 255, 1) 20%,    /* Light cyan */
-        rgba(224, 255, 238, 1) 40%,    /* Soft mint green */
-        rgba(255, 249, 219, 1) 60%,    /* Light yellow */
-        rgba(255, 238, 224, 1) 80%,    /* Light peach/orange */
-        rgba(255, 255, 255, 1) 100%    /* White */
-    );
+    background: linear-gradient(180deg,
+            rgba(252, 246, 255, 1) 0%,
+            /* Light pastel purple */
+            rgba(224, 247, 255, 1) 20%,
+            /* Light cyan */
+            rgba(224, 255, 238, 1) 40%,
+            /* Soft mint green */
+            rgba(255, 249, 219, 1) 60%,
+            /* Light yellow */
+            rgba(255, 238, 224, 1) 80%,
+            /* Light peach/orange */
+            rgba(255, 255, 255, 1) 100%
+            /* White */
+        );
     background-size: 100% auto;
     background-repeat: no-repeat;
     transition: background 0.4s ease, color 0.4s ease;
@@ -65,11 +71,12 @@ html {
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50px;
-    padding: 10px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0;
+    padding: 15px 40px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     transition: all 0.4s ease;
+    width: 100%;
 }
 
 /* Scroll Effect */
@@ -938,10 +945,11 @@ html {
 
 .about-section {
     position: relative;
-    padding: 50px 0;
+    padding: 50px 0 80px;
     background: transparent;
     overflow: hidden;
     z-index: 1;
+    isolation: isolate;
 }
 
 .about-visual-wrapper {
@@ -1184,6 +1192,23 @@ html {
 
 
 /* Responsive fixes */
+@media (max-width: 1199px) {
+    .about-section {
+        padding-bottom: 60px;
+    }
+
+    .about-text-content {
+        padding-left: 0 !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .about-mv-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
 @media (max-width: 991px) {
     .section-title-modern {
         font-size: 2.5rem;
@@ -1264,10 +1289,10 @@ html {
     background-origin: border-box;
     background-clip: padding-box, border-box;
     transition: transform 0.4s ease, box-shadow 0.4s ease, background-image 0.4s ease;
+    height: 500px !important;
 }
 
 .service-split-card:hover {
-    transform: translateY(-5px);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
     background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(135deg, rgba(244, 180, 0, 0.75), rgba(249, 115, 22, 0.75));
 }
@@ -1403,6 +1428,26 @@ html {
 .mockup-header-right {
     flex-wrap: wrap;
     justify-content: flex-end;
+    margin-left: auto;
+}
+
+.mockup-body {
+    min-height: 250px !important;
+}
+
+.tab-pane-mockup {
+    overflow-y: auto !important;
+}
+
+@media (max-width: 991px) {
+    .mockup-window {
+        height: auto;
+    }
+
+    .service-content.mb-5 {
+        margin-bottom: 1.5rem !important;
+        /* reduce the gap between text and mockup when stacked */
+    }
 }
 
 .mockup-dots {
@@ -1430,7 +1475,7 @@ html {
 }
 
 .mockup-logo-badge {
-    font-size: 0.85rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: #1e293b;
 }
@@ -1443,13 +1488,13 @@ html {
 .mockup-tab-btn-mobile,
 .mockup-tab-btn-ecom,
 .mockup-tab-btn-dm {
-    font-size: 0.75rem;
+    font-size: 0.4rem;
     font-weight: 700;
     color: #64748b;
     background: transparent;
     border: 0;
-    padding: 4px 10px;
-    border-radius: 6px;
+    padding: 6px 14px;
+    border-radius: 8px;
     transition: all 0.2s ease;
 }
 
@@ -1475,10 +1520,61 @@ html {
     justify-content: center;
 }
 
+.requirements-box,
+.ecommerce-product-card,
+.checkout-card,
+.analytics-card,
+.ad-simulator-card,
+.seo-analyzer-card {
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06) !important;
+    background: #ffffff !important;
+}
+
 .requirements-box {
-    border-color: rgba(98, 72, 255, 0.1) !important;
     transform: scale(1);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+}
+
+.requirements-header {
+    font-size: 0.78rem !important;
+}
+
+/* Typography scaling for all mockup interactive parts */
+.interactive-mockup label,
+.interactive-mockup input,
+.interactive-mockup textarea,
+.interactive-mockup button,
+.interactive-mockup span,
+.interactive-mockup p,
+.interactive-mockup h3,
+.interactive-mockup h4,
+.interactive-mockup h5,
+.interactive-mockup h6,
+.interactive-mockup li {
+    font-size: 0.72rem !important;
+}
+
+/* Visual hierarchy scale-downs */
+.interactive-mockup h3 {
+    font-size: 1.15rem !important;
+}
+
+.interactive-mockup h4 {
+    font-size: 0.95rem !important;
+}
+
+.interactive-mockup h5,
+.interactive-mockup h6 {
+    font-size: 0.82rem !important;
+}
+
+.interactive-mockup .small,
+.interactive-mockup small,
+.interactive-mockup p,
+.interactive-mockup li {
+    font-size: 0.65rem !important;
 }
 
 .requirements-state-wrapper.pressed .requirements-box {
@@ -1933,7 +2029,7 @@ html {
 /* ============================================ */
 
 .testimonial-section-vertical {
-    padding: 100px 0;
+    padding: 30px 0 50px 0;
     background: transparent;
     overflow: hidden;
 }
@@ -3683,7 +3779,7 @@ ul {
 .premium-hero {
     position: relative;
     width: 100%;
-    min-height: 70vh;
+    min-height: clamp(600px, 70svh, 850px);
     margin-top: 30px;
     padding: 60px 0 30px 0;
     /* Adjusted to shift content up */
@@ -3895,7 +3991,16 @@ ul {
 }
 
 /* Responsive */
+@media (max-width: 1199px) {
+    .premium-hero {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+}
+
 @media (max-width: 991px) {
+
     .premium-hero-title {
         font-size: 4rem;
     }
@@ -3925,7 +4030,13 @@ ul {
 /* SCALING SUCCESSFUL COMPANIES BENTO GRID   */
 /* ========================================= */
 .scaling-companies-section {
-    background-color: transparent;
+    background-color: #faf8f5 !important;
+    position: relative;
+    z-index: 15;
+}
+
+.dark-mode .scaling-companies-section {
+    background-color: #121212 !important;
 }
 
 .scaling-title {
@@ -4674,9 +4785,15 @@ ul {
 /* ========================================= */
 
 .project-bento-section {
-    background-color: transparent;
+    background-color: #faf8f5 !important;
     padding-top: 100px !important;
     padding-bottom: 80px !important;
+    position: relative;
+    z-index: 15;
+}
+
+.dark-mode .project-bento-section {
+    background-color: #0d0d0d !important;
 }
 
 .projects-bg-text {
@@ -4927,7 +5044,11 @@ ul {
 
 /* Increased height for interactive mockup */
 .interactive-mockup {
-    height: 450px !important;
+    height: 400px !important;
+}
+
+.ecommerce-mockup {
+    height: 425px !important;
 }
 
 /* Preset pills */
@@ -4937,30 +5058,32 @@ ul {
 
 .preset-pill {
     cursor: pointer;
-    padding: 4px 10px;
+    padding: 6px 14px;
     border-radius: 20px;
-    border: 1px solid rgba(98, 72, 255, 0.15);
-    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
     color: #64748b;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     transition: all 0.2s ease;
 }
 
 .preset-pill:hover {
     background: rgba(98, 72, 255, 0.05);
     color: #6248ff;
+    border-color: rgba(98, 72, 255, 0.2);
 }
 
 .preset-pill.active {
-    background: rgba(98, 72, 255, 0.1);
+    background: #ffffff;
     border-color: #6248ff;
     color: #6248ff;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .sitemap-textarea {
     resize: none;
-    border-color: rgba(98, 72, 255, 0.15) !important;
+    border-color: #e2e8f0 !important;
+    border-radius: 8px;
     font-size: 0.75rem;
 }
 
@@ -4977,6 +5100,7 @@ ul {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
     transition: all 0.2s ease;
     position: relative;
+    font-size: 0.68rem !important;
 }
 
 .sitemap-node-item:hover {
@@ -5176,9 +5300,11 @@ ul {
 /* STICKY HORIZONTAL SLIDER COMPONENT */
 .services-sticky-section {
     position: relative;
-    background: transparent;
+    background: linear-gradient(180deg,
+            rgba(255, 249, 219, 1) 0%,
+            rgba(255, 255, 255, 1) 40%);
     height: 100vh;
-    z-index: 2;
+    z-index: 10;
     /* ScrollTrigger will manage pinning duration and spacer height */
 }
 
@@ -5219,7 +5345,7 @@ ul {
 }
 
 .services-slide .container {
-    max-width: 1240px;
+    max-width: 1100px;
     padding: 30px 40px;
 }
 
@@ -5229,32 +5355,35 @@ ul {
 @media (max-width: 991px) {
     .interactive-mockup {
         height: auto !important;
-        min-height: 440px;
+        min-height: 320px;
     }
 
-    .interactive-mockup.ecommerce-mockup,
-    .interactive-mockup.analytics-mockup,
-    .interactive-mockup#mobileMockupWindow {
-        /* Other mockups might not need as much scaling */
-        zoom: 0.85;
+    .web-dev-mockup .mockup-header {
+        flex-wrap: nowrap !important;
+        padding: 8px 12px !important;
+        gap: 6px !important;
     }
-}
 
-@media (max-width: 768px) {
-    .interactive-mockup {
-        zoom: 0.7;
+    .web-dev-mockup .mockup-header-right {
+        margin-left: auto !important;
+        flex-wrap: nowrap !important;
     }
-}
 
-@media (max-width: 480px) {
-    .interactive-mockup {
-        zoom: 0.55;
+    .web-dev-mockup .mockup-tab-btn {
+        padding: 4px 8px !important;
+        font-size: 0.5rem !important;
     }
 }
 
 @media (max-width: 991px) {
     .services-sticky-section {
         height: auto !important;
+        background: #ffffff !important;
+        z-index: 10 !important;
+    }
+
+    .dark-mode .services-sticky-section {
+        background: #121212 !important;
     }
 
     .services-sticky-wrapper {
@@ -5283,11 +5412,40 @@ ul {
 
     .services-slide {
         width: 100% !important;
+        height: auto !important;
         margin-bottom: 30px;
     }
 
     .services-slide .container {
         padding: 0 !important;
+    }
+
+    .service-split-card {
+        padding: 24px;
+        height: 1024px !important;
+        overflow: hidden;
+    }
+
+    .service-title {
+        font-size: 2rem;
+    }
+
+    .mockup-window {
+        height: auto;
+    }
+
+    .interactive-mockup {
+        height: auto !important;
+        min-height: 380px;
+    }
+
+    .mockup-body {
+        min-height: 380px !important;
+    }
+
+    .service-content.mb-5,
+    .service-content.mb-lg-0 {
+        margin-bottom: 1.5rem !important;
     }
 
     .desktop-only {
@@ -5300,6 +5458,33 @@ ul {
         display: none !important;
     }
 }
+
+/* Small desktop — keep horizontal slider, tighten card layout to prevent clipping
+@media (min-width: 992px) and (max-width: 1199px) {
+    .services-horizontal-track {
+        height: 78vh;
+    }
+
+    .service-title {
+        font-size: 1.75rem;
+    }
+
+    .service-split-card {
+        padding: 20px;
+    }
+
+    .interactive-mockup {
+        height: 320px !important;
+    }
+    
+    .mockup-body {
+        min-height: 250px !important;
+    }
+
+    .services-slide .container {
+        padding: 20px 24px;
+    }
+} */
 
 /* ==========================================================================
    MOBILE APP MOCKUP & WIREFRAME CUSTOM STYLES
@@ -5380,7 +5565,8 @@ ul {
 /* Responsive card heights mapping */
 @media (min-width: 992px) {
     .service-split-card {
-        min-height: 500px;
+        height: 480px !important;
+        padding: 24px;
     }
 }
 
@@ -5399,5 +5585,200 @@ ul {
 #dmInteractiveMockupBody,
 #dmInteractiveMockupBody *,
 #dmInteractiveMockupBody [style*="cursor"] {
-    cursor: none !important;
+    cursor: url('https://cdn.prod.website-files.com/6177739448baa66404ce1d9c/65b1a12e3211534c63d294b5_Guest%20Green%20Cursor.png'), auto !important;
+}
+
+/* 3D Fold Effect Marquee Section */
+.fold-effect-section {
+    height: 100vh;
+    background-color: #efefef;
+    position: relative;
+    overflow: visible;
+    transition: background-color 0.3s ease;
+    z-index: 12;
+}
+
+.fold-effect-section .screen {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.fold-effect-section .wrapper-3d {
+    position: relative;
+    perspective: 20vw;
+    transform-style: preserve-3d;
+}
+
+.fold-effect-section .fold {
+    overflow: hidden;
+    width: 100vw;
+    height: 80vh;
+}
+
+.fold-effect-section .fold-top {
+    position: absolute;
+    transform-origin: bottom center;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    transform: rotateX(-120deg);
+}
+
+.fold-effect-section .fold-center {
+    width: 100vw;
+}
+
+.fold-effect-section .fold-bottom {
+    position: absolute;
+    transform-origin: top center;
+    right: 0;
+    left: 0;
+    top: 100%;
+    transform: rotateX(120deg);
+}
+
+.fold-effect-section .fold-align {
+    width: 100%;
+    height: 100%;
+}
+
+.fold-effect-section .fold-bottom .fold-align {
+    transform: translateY(-100%);
+}
+
+.fold-effect-section .fold-top .fold-align {
+    transform: translateY(100%);
+}
+
+.fold-effect-section .fold-center .fold-align {
+    transform: none;
+}
+
+.fold-effect-section .fold-marquee {
+    border-bottom: 1px solid #1a1a1a;
+    color: #cccccc;
+    font-size: clamp(4.50rem, 3.64rem + 4.29vw, 9.00rem);
+    font-weight: 700;
+    height: calc(170px + 4rem);
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.fold-effect-section .fold-track {
+    height: 100%;
+    overflow: hidden;
+    padding: 0.5rem 0;
+    position: absolute;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.fold-effect-section .fold-focus {
+    color: #1a1a1a;
+    font-weight: 900;
+    transition: color 0.3s ease;
+}
+
+.dark-mode .fold-effect-section {
+    background-color: #121212;
+}
+
+.dark-mode .fold-effect-section .fold-focus {
+    color: #ffffff;
+}
+
+.dark-mode .fold-effect-section .fold-marquee {
+    border-bottom: 1px solid #333333;
+    color: #444444;
+}
+
+/* Fold Effect - Mobile Responsive */
+@media (max-width: 991px) {
+    .fold-effect-section {
+        height: auto !important;
+        z-index: 12 !important;
+        overflow: hidden !important;
+        padding: 12px 0 16px !important;
+    }
+
+    .fold-effect-section .screen {
+        height: auto !important;
+        position: relative !important;
+        display: block !important;
+        align-items: unset !important;
+        justify-content: unset !important;
+    }
+
+    .fold-effect-section .wrapper-3d {
+        perspective: none !important;
+        transform-style: flat !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Show only center fold on mobile - hide top/bottom */
+    .fold-effect-section .fold-top,
+    .fold-effect-section .fold-bottom {
+        display: none !important;
+    }
+
+    .fold-effect-section .fold-center {
+        position: relative !important;
+        transform: none !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .fold-effect-section .fold {
+        height: auto !important;
+        overflow: hidden !important;
+    }
+
+    .fold-effect-section .fold-align {
+        transform: none !important;
+        height: auto !important;
+    }
+
+    .fold-effect-section .fold-content {
+        transform: none !important;
+    }
+
+    .fold-effect-section .fold-marquee {
+        height: calc(50px + 0.5rem) !important;
+        font-size: clamp(1rem, 4.5vw, 1.8rem) !important;
+    }
+
+    .fold-effect-section .fold-track {
+        position: relative !important;
+        white-space: nowrap !important;
+        padding: 0.2rem 0 !important;
+    }
+
+    /* Show only one row on mobile */
+    .fold-effect-section .fold-marquee:not(:first-child) {
+        display: none !important;
+    }
+
+    /* Entire text will be bold */
+    .fold-effect-section .fold-marquee:first-child .fold-track {
+        font-weight: 900 !important;
+        color: #1a1a1a !important;
+    }
+
+    .fold-effect-section .fold-marquee:first-child .fold-focus {
+        color: inherit !important;
+    }
+
+    .dark-mode .fold-effect-section .fold-marquee:first-child .fold-track {
+        color: #ffffff !important;
+    }
 }

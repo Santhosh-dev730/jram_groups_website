@@ -28,6 +28,10 @@
         margin-top: 0px;
     }
 
+    .macbook-straight-assembly.state-tablet {
+        max-width: 280px; /* Constrain so 3:4 aspect height fits within 400px */
+    }
+
     .macbook-straight-assembly,
     .macbook-straight-assembly.state-tablet,
     .macbook-straight-assembly.state-mobile {
@@ -396,6 +400,8 @@
     background: #ffffff;
     padding: 15px;
     gap: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .tablet-header {

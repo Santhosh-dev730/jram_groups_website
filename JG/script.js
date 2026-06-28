@@ -1775,10 +1775,10 @@ document.addEventListener("DOMContentLoaded", () => {
             mainScrollTrigger = null;
         }
 
-        // On mobile/tablet view (max-width: 991px), we don't pin/scroll-translate with GSAP
+        // Mobile/tablet (max-width: 991px): stack cards — no GSAP pin/horizontal scroll
         if (window.innerWidth <= 991) {
-            // Reset track transform in case it was translated
             gsap.set(sliderTrack, { clearProps: "transform,x" });
+            gsap.set(stickySection, { clearProps: "transform" });
             return;
         }
 
@@ -2337,4 +2337,95 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+
+    // 3D Fold Effect Scroll Trigger
+    let foldScrollTrigger = null;
+
+    function initFoldEffect() {
+        const centerContent = document.getElementById('center-content');
+        const centerFold = document.getElementById('center-fold');
+        const foldsContent = Array.from(document.querySelectorAll('.fold-effect-section .fold-content'));
+        const foldTracks = Array.from(document.querySelectorAll('.fold-effect-section .fold-track'));
+
+        if (!centerContent || !centerFold || foldsContent.length === 0) return;
+
+        // Clean up previous timeline if exists
+        if (foldScrollTrigger) {
+            foldScrollTrigger.kill();
+            foldScrollTrigger = null;
+        }
+
+        // On mobile/tablet: no pinning — CSS handles static display, but we keep horizontal scrolling
+        if (window.innerWidth <= 991) {
+            foldScrollTrigger = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#fold-section-trigger",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
+                    invalidateOnRefresh: true
+                }
+            });
+            foldTracks.forEach((track, index) => {
+                const rowIdx = index % 4;
+                const [x, xEnd] = (rowIdx % 2 == 0) ? [-500, -1500] : [-500, 0];
+                gsap.set(track, { x: x });
+                foldScrollTrigger.to(track, { x: xEnd, ease: "none" }, 0);
+            });
+            foldsContent.forEach(content => {
+                gsap.set(content, { clearProps: 'transform,y' });
+            });
+            return;
+        }
+
+        const overflowHeight = centerContent.clientHeight - centerFold.clientHeight;
+
+        // Create GSAP Timeline
+        foldScrollTrigger = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#fold-section-trigger",
+                start: "top top",
+                end: "+=500", // Shorter scroll distance (500px) so scrolling past is faster and smoother
+                pin: "#fold-effect",
+                pinSpacing: true,
+                scrub: true,
+                invalidateOnRefresh: true
+            }
+        });
+
+        // 1. Vertical scroll for paper-fold effect
+        foldScrollTrigger.to(foldsContent, {
+            y: -overflowHeight,
+            ease: "none"
+        }, 0);
+
+        // 2. Synchronized horizontal marquee scrolling (using hardware-accelerated GSAP transforms)
+        foldTracks.forEach((track, index) => {
+            const rowIdx = index % 4; // 4 rows inside each fold
+            const [x, xEnd] = (rowIdx % 2 == 0) ? [-500, -1500] : [-500, 0];
+            
+            // Set initial state
+            gsap.set(track, { x: x });
+            
+            // Animate to end state
+            foldScrollTrigger.to(track, {
+                x: xEnd,
+                ease: "none"
+            }, 0);
+        });
+    }
+
+    // Run initialization
+    initFoldEffect();
+
+    // Re-initialize on resize / load to ensure correct height calculations
+    window.addEventListener("resize", initFoldEffect);
+    window.addEventListener("load", () => {
+        initFoldEffect();
+        ScrollTrigger.refresh();
+    });
+    setTimeout(() => {
+        initFoldEffect();
+        ScrollTrigger.refresh();
+    }, 200);
 });
