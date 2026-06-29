@@ -987,6 +987,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function startWebsiteDemo() {
+        if (window.innerWidth <= 991) return;
         if (demoInteracted[0]) return;
         isDemoRunning[0] = true;
         
@@ -1210,6 +1211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function startEcomDemo() {
+        if (window.innerWidth <= 991) return;
         if (demoInteracted[1]) return;
         isDemoRunning[1] = true;
 
@@ -1309,6 +1311,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function startMobileDemo() {
+        if (window.innerWidth <= 991) return;
         if (demoInteracted[2]) return;
         isDemoRunning[2] = true;
 
@@ -1434,6 +1437,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function startDmDemo() {
+        if (window.innerWidth <= 991) return;
         if (demoInteracted[3]) return;
         isDemoRunning[3] = true;
 
@@ -1771,7 +1775,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Clean up previous ScrollTrigger if exists
         if (mainScrollTrigger) {
-            mainScrollTrigger.kill();
+            mainScrollTrigger.revert();
             mainScrollTrigger = null;
         }
 
@@ -2351,7 +2355,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Clean up previous timeline if exists
         if (foldScrollTrigger) {
-            foldScrollTrigger.kill();
+            foldScrollTrigger.revert();
             foldScrollTrigger = null;
         }
 
@@ -2369,6 +2373,7 @@ document.addEventListener("DOMContentLoaded", () => {
             foldTracks.forEach((track, index) => {
                 const rowIdx = index % 4;
                 const [x, xEnd] = (rowIdx % 2 == 0) ? ["-10%", "-50%"] : ["-50%", "-10%"];
+                gsap.set(track, { clearProps: "transform,x" });
                 gsap.set(track, { x: x });
                 foldScrollTrigger.to(track, { x: xEnd, ease: "none" }, 0);
             });
@@ -2405,6 +2410,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const [x, xEnd] = (rowIdx % 2 == 0) ? [-500, -1500] : [-500, 0];
             
             // Set initial state
+            gsap.set(track, { clearProps: "transform,x" });
             gsap.set(track, { x: x });
             
             // Animate to end state
@@ -2419,7 +2425,10 @@ document.addEventListener("DOMContentLoaded", () => {
     initFoldEffect();
 
     // Re-initialize on resize / load to ensure correct height calculations
-    window.addEventListener("resize", initFoldEffect);
+    window.addEventListener("resize", () => {
+        initFoldEffect();
+        ScrollTrigger.refresh();
+    });
     window.addEventListener("load", () => {
         initFoldEffect();
         ScrollTrigger.refresh();

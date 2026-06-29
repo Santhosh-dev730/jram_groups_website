@@ -1419,7 +1419,7 @@ html {
 .mockup-header {
     background: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    padding: 12px 20px;
+    padding: 7px 20px;
     flex-wrap: wrap;
     gap: 10px;
 }
@@ -1487,7 +1487,7 @@ html {
 .mockup-tab-btn-mobile,
 .mockup-tab-btn-ecom,
 .mockup-tab-btn-dm {
-    font-size: 0.4rem;
+    font-size: 0.3rem;
     font-weight: 700;
     color: #64748b;
     background: transparent;
@@ -5430,6 +5430,7 @@ ul {
     }
 
     .mockup-window {
+        zoom: 0.75;
         height: auto;
     }
 
