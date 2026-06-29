@@ -29,7 +29,6 @@ body {
 
 html {
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 
@@ -5303,7 +5302,7 @@ ul {
     background: linear-gradient(180deg,
             rgba(255, 249, 219, 1) 0%,
             rgba(255, 255, 255, 1) 40%);
-    height: 100vh;
+    min-height: 100vh;
     z-index: 10;
     /* ScrollTrigger will manage pinning duration and spacer height */
 }
@@ -5590,7 +5589,7 @@ ul {
 
 /* 3D Fold Effect Marquee Section */
 .fold-effect-section {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #efefef;
     position: relative;
     overflow: visible;
@@ -5705,6 +5704,7 @@ ul {
 @media (max-width: 991px) {
     .fold-effect-section {
         height: auto !important;
+        min-height: auto !important;
         z-index: 12 !important;
         overflow: hidden !important;
         padding: 12px 0 16px !important;
@@ -5761,24 +5761,8 @@ ul {
         position: relative !important;
         white-space: nowrap !important;
         padding: 0.2rem 0 !important;
+        width: max-content !important;
     }
 
-    /* Show only one row on mobile */
-    .fold-effect-section .fold-marquee:not(:first-child) {
-        display: none !important;
-    }
 
-    /* Entire text will be bold */
-    .fold-effect-section .fold-marquee:first-child .fold-track {
-        font-weight: 900 !important;
-        color: #1a1a1a !important;
-    }
-
-    .fold-effect-section .fold-marquee:first-child .fold-focus {
-        color: inherit !important;
-    }
-
-    .dark-mode .fold-effect-section .fold-marquee:first-child .fold-track {
-        color: #ffffff !important;
-    }
 }

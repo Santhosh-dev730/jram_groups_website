@@ -2368,7 +2368,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             foldTracks.forEach((track, index) => {
                 const rowIdx = index % 4;
-                const [x, xEnd] = (rowIdx % 2 == 0) ? [-500, -1500] : [-500, 0];
+                const [x, xEnd] = (rowIdx % 2 == 0) ? ["-10%", "-50%"] : ["-50%", "-10%"];
                 gsap.set(track, { x: x });
                 foldScrollTrigger.to(track, { x: xEnd, ease: "none" }, 0);
             });
