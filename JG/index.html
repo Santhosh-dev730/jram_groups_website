@@ -106,7 +106,7 @@
 
         <div class="container position-relative py-lg-5 py-2" style="z-index: 2;">
             <div class="row align-items-center">
-                <div class="col-lg-7 col-md-12 mb-1 mb-lg-0">
+                <div class="col-lg-7 col-md-6 mb-1 mb-lg-0">
                     <div class="hero-content">
                         <div class="animated-pill">
                             <div class="pill-content">
@@ -136,7 +136,7 @@
                 </div>
 
                 <!-- STRAIGHT MACBOOK HERO SHOWCASE -->
-                <div class="col-lg-5 col-md-12 mb-5 mb-lg-0">
+                <div class="col-lg-5 col-md-6 mb-5 mb-lg-0">
                     <div class="macbook-showcase" id="macbookWrapper">
                         <div class="macbook-straight-assembly">
 
@@ -387,22 +387,23 @@
 
                                 <div class="col-lg-6 col-md-12 service-visual">
                                     <div class="mockup-window interactive-mockup">
-                                        <div class="mockup-header d-flex justify-content-between align-items-center">
+                                        <div
+                                            class="mockup-header d-flex flex-nowrap justify-content-between align-items-center">
                                             <div class="mockup-header-left d-flex align-items-center gap-2">
                                                 <div class="mockup-dots"><span class="dot-red"></span><span
                                                         class="dot-yellow"></span><span class="dot-green"></span></div>
                                                 <div class="mockup-logo-badge"><i class="fa-solid fa-cubes"></i>
                                                     JramGroups</div>
                                             </div>
-                                            <div class="mockup-header-right d-flex gap-2">
+                                            <div class="mockup-header-right d-flex flex-nowrap gap-2">
                                                 <button class="mockup-tab-btn active"
                                                     data-tab="requirements">Requirements</button>
                                                 <button class="mockup-tab-btn" data-tab="wireframe">Wireframe</button>
-                                                <button class="mockup-tab-btn" data-tab="style">Style Guide</button>
+                                                <button class="mockup-tab-btn" data-tab="style">Style</button>
                                             </div>
                                         </div>
                                         <div class="mockup-body position-relative"
-                                            style="min-height: 380px; background-color: #f8fafc; overflow: hidden;"
+                                            style="min-height: 460px; background-color: #f8fafc; overflow-y: auto; overflow-x: hidden;"
                                             id="interactiveMockupBody">
 
 
@@ -456,7 +457,7 @@
 
                                                 <!-- State 2: Sitemap Tree Flowchart -->
                                                 <div class="sitemap-state-wrapper w-100 h-100 p-3" id="sitemapState"
-                                                    style="display: none; overflow: hidden; z-index: 4;">
+                                                    style="display: none; overflow-y: auto; overflow-x: hidden; z-index: 4;">
                                                     <div class="sitemap-instructions text-center text-muted mb-2"
                                                         style="font-size: 0.6rem;">
                                                         <i class="fa-solid fa-info-circle"></i> Double-click text to
@@ -898,12 +899,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Guest cursor (follows mouse) -->
-                                            <div class="mock-floating-cursor" id="guestCursor"
-                                                style="position:absolute; left:20%; top:30%; transition: left 0.1s ease, top 0.1s ease; pointer-events:none; z-index:20;">
-                                                <img src="https://cdn.prod.website-files.com/6177739448baa66404ce1d9c/65b1a12e3211534c63d294b5_Guest%20Green%20Cursor.png"
-                                                    width="42" alt="Cursor">
-                                            </div>
+                                        </div>
+                                        <!-- Guest cursor (follows mouse) -->
+                                        <div class="mock-floating-cursor" id="guestCursor"
+                                            style="position:absolute; left:20%; top:30%; transition: left 0.1s ease, top 0.1s ease; pointer-events:none; z-index:20;">
+                                            <img src="https://cdn.prod.website-files.com/6177739448baa66404ce1d9c/65b1a12e3211534c63d294b5_Guest%20Green%20Cursor.png"
+                                                width="42" alt="Cursor">
                                         </div>
                                     </div>
                                 </div>
@@ -949,7 +950,8 @@
 
                                 <div class="col-lg-6 col-md-12 service-visual">
                                     <div class="mockup-window interactive-mockup ecommerce-mockup">
-                                        <div class="mockup-header d-flex justify-content-between align-items-center">
+                                        <div
+                                            class="mockup-header d-flex flex-nowrap justify-content-between align-items-center">
                                             <div class="mockup-header-left d-flex align-items-center gap-2">
                                                 <div class="mockup-dots"><span class="dot-red"></span><span
                                                         class="dot-yellow"></span><span class="dot-green"></span>
@@ -957,16 +959,15 @@
                                                 <div class="mockup-logo-badge"><i class="fa-solid fa-bag-shopping"></i>
                                                     Shopbillz</div>
                                             </div>
-                                            <div class="mockup-header-right d-flex gap-3 align-items-center">
-                                                <div class="d-flex flex-wrap gap-1">
-                                                    <button class="mockup-tab-btn-ecom active"
-                                                        data-tab-ecom="store">Storefront</button>
-                                                    <button class="mockup-tab-btn-ecom"
-                                                        data-tab-ecom="checkout">Checkout</button>
-                                                    <button class="mockup-tab-btn-ecom"
-                                                        data-tab-ecom="analytics">Analytics</button>
-                                                </div>
-                                                <div class="mock-cart-icon position-relative">
+                                            <div
+                                                class="mockup-header-right d-flex flex-nowrap gap-2 align-items-center">
+                                                <button class="mockup-tab-btn-ecom active"
+                                                    data-tab-ecom="store">Storefront</button>
+                                                <button class="mockup-tab-btn-ecom"
+                                                    data-tab-ecom="checkout">Checkout</button>
+                                                <button class="mockup-tab-btn-ecom"
+                                                    data-tab-ecom="analytics">Analytics</button>
+                                                <div class="mock-cart-icon position-relative ms-2">
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                     <span class="mock-cart-badge" id="mockCartCount">0</span>
                                                 </div>
@@ -1101,19 +1102,20 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <!-- Floating Guest Cursor for Ecommerce card -->
-                                            <div class="mock-floating-cursor" id="ecomGuestCursor"
-                                                style="left: 10%; top: 70%; transition: opacity 0.5s, left 1.2s cubic-bezier(0.25, 1, 0.5, 1), top 1.2s cubic-bezier(0.25, 1, 0.5, 1); pointer-events: none; z-index: 20; opacity: 0;">
-                                                <img src="https://cdn.prod.website-files.com/6177739448baa66404ce1d9c/65b1a12e3211534c63d294b5_Guest%20Green%20Cursor.png"
-                                                    width="42" alt="Cursor">
-                                            </div>
+                                        <!-- Floating Guest Cursor for Ecommerce card -->
+                                        <div class="mock-floating-cursor" id="ecomGuestCursor"
+                                            style="left: 10%; top: 70%; transition: opacity 0.5s, left 1.2s cubic-bezier(0.25, 1, 0.5, 1), top 1.2s cubic-bezier(0.25, 1, 0.5, 1); pointer-events: none; z-index: 20; opacity: 0;">
+                                            <img src="https://cdn.prod.website-files.com/6177739448baa66404ce1d9c/65b1a12e3211534c63d294b5_Guest%20Green%20Cursor.png"
+                                                width="42" alt="Cursor">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
 
                     <!-- Slide 2: Mobile App Development -->
                     <div class="services-slide">
@@ -1153,7 +1155,8 @@
 
                                 <div class="col-lg-6 col-md-12 service-visual">
                                     <div class="mockup-window interactive-mockup" id="mobileMockupWindow">
-                                        <div class="mockup-header d-flex justify-content-between align-items-center">
+                                        <div
+                                            class="mockup-header d-flex flex-nowrap justify-content-between align-items-center">
                                             <div class="mockup-header-left d-flex align-items-center gap-2">
                                                 <div class="mockup-dots"><span class="dot-red"></span><span
                                                         class="dot-yellow"></span><span class="dot-green"></span>
@@ -1161,7 +1164,7 @@
                                                 <div class="mockup-logo-badge"><i
                                                         class="fa-solid fa-mobile-screen-button"></i> Jram App</div>
                                             </div>
-                                            <div class="mockup-header-right d-flex gap-2">
+                                            <div class="mockup-header-right d-flex flex-nowrap gap-2">
                                                 <button class="mockup-tab-btn-mobile active"
                                                     data-tab-mobile="wireframe">Wireframe</button>
                                                 <button class="mockup-tab-btn-mobile" data-tab-mobile="style">Style
@@ -1409,13 +1412,13 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Floating Guest Cursor for Mobile App card -->
-                                            <div class="mock-floating-cursor" id="mobileGuestCursor"
-                                                style="left: 20%; top: 30%; transition: all 1s ease; pointer-events: none; z-index: 20;">
-                                                <img src="https://cdn.prod.website-files.com/6177739448baa66404ce1d9c/65b1a12e3211534c63d294b5_Guest%20Green%20Cursor.png"
-                                                    width="42" alt="Cursor">
-                                            </div>
+                                        </div>
 
+                                        <!-- Floating Guest Cursor for Mobile App card -->
+                                        <div class="mock-floating-cursor" id="mobileGuestCursor"
+                                            style="left: 20%; top: 30%; transition: all 1s ease; pointer-events: none; z-index: 20;">
+                                            <img src="https://cdn.prod.website-files.com/6177739448baa66404ce1d9c/65b1a12e3211534c63d294b5_Guest%20Green%20Cursor.png"
+                                                width="42" alt="Cursor">
                                         </div>
                                     </div>
                                 </div>
@@ -1470,15 +1473,13 @@
                                                     Analytics
                                                 </div>
                                             </div>
-                                            <div class="mockup-header-right d-flex gap-2">
-                                                <div class="d-flex flex-wrap gap-1">
-                                                    <button class="mockup-tab-btn-dm active" data-tab-dm="ad">Ad
-                                                        Simulator</button>
-                                                    <button class="mockup-tab-btn-dm" data-tab-dm="seo">SEO
-                                                        Audit</button>
-                                                    <button class="mockup-tab-btn-dm"
-                                                        data-tab-dm="analytics">Analytics</button>
-                                                </div>
+                                            <div class="mockup-header-right d-flex flex-nowrap gap-2">
+                                                <button class="mockup-tab-btn-dm active" data-tab-dm="ad">Ad
+                                                    Simulator</button>
+                                                <button class="mockup-tab-btn-dm" data-tab-dm="seo">SEO
+                                                    Audit</button>
+                                                <button class="mockup-tab-btn-dm"
+                                                    data-tab-dm="analytics">Analytics</button>
                                             </div>
                                         </div>
 
@@ -1674,12 +1675,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Floating Guest Cursor for Digital Marketing card -->
-                                            <div class="mock-floating-cursor" id="dmGuestCursor"
-                                                style="left: 10%; top: 70%; transition: opacity 0.5s, left 1.2s cubic-bezier(0.25, 1, 0.5, 1), top 1.2s cubic-bezier(0.25, 1, 0.5, 1); pointer-events: none; z-index: 20; opacity: 0;">
-                                                <img src="https://cdn.prod.website-files.com/6177739448baa66404ce1d9c/65b1a12e3211534c63d294b5_Guest%20Green%20Cursor.png"
-                                                    width="42" alt="Cursor">
-                                            </div>
+                                        </div>
+                                        <!-- Floating Guest Cursor for Digital Marketing card -->
+                                        <div class="mock-floating-cursor" id="dmGuestCursor"
+                                            style="left: 10%; top: 70%; transition: opacity 0.5s, left 1.2s cubic-bezier(0.25, 1, 0.5, 1), top 1.2s cubic-bezier(0.25, 1, 0.5, 1); pointer-events: none; z-index: 20; opacity: 0;">
+                                            <img src="https://cdn.prod.website-files.com/6177739448baa66404ce1d9c/65b1a12e3211534c63d294b5_Guest%20Green%20Cursor.png"
+                                                width="42" alt="Cursor">
                                         </div>
                                     </div>
                                 </div>

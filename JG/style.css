@@ -1407,6 +1407,7 @@ html {
 /* ============================================ */
 
 .mockup-window {
+    position: relative;
     background: #f8fafc;
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 24px;
@@ -1420,12 +1421,12 @@ html {
     background: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     padding: 7px 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 10px;
 }
 
 .mockup-header-right {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-end;
     margin-left: auto;
 }
@@ -1474,7 +1475,7 @@ html {
 }
 
 .mockup-logo-badge {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: #1e293b;
 }
@@ -1487,7 +1488,7 @@ html {
 .mockup-tab-btn-mobile,
 .mockup-tab-btn-ecom,
 .mockup-tab-btn-dm {
-    font-size: 0.3rem;
+    font-size: 0.6rem;
     font-weight: 700;
     color: #64748b;
     background: transparent;
@@ -3076,7 +3077,7 @@ ul {
 
 .going-on-section ul {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .going-on-section #itemList li {
@@ -3447,7 +3448,7 @@ ul {
 
 .expertise-pills {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 8px;
 }
 
@@ -3558,7 +3559,7 @@ ul {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     position: relative;
     z-index: 2;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 15px;
 }
 
@@ -3742,7 +3743,7 @@ ul {
 .flip-badge .flip-content {
     display: flex;
     flex-direction: column;
-    animation: flipAnim 6s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+
 }
 
 .flip-badge .flip-content>span {
@@ -4630,7 +4631,7 @@ ul {
     border: 2px solid #fff;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    animation: floatNode 4s infinite alternate ease-in-out;
+
 }
 
 .map-node img {
