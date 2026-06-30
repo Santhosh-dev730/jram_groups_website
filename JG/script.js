@@ -2372,10 +2372,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             foldTracks.forEach((track, index) => {
                 const rowIdx = index % 4;
-                const [xP, xPEnd] = (rowIdx % 2 == 0) ? [-10, -50] : [-50, -10];
+                const [xStart, xEnd] = (rowIdx % 2 == 0) ? ["-10vw", "-150vw"] : ["-150vw", "-10vw"];
                 gsap.set(track, { clearProps: "transform,x,xPercent" });
-                gsap.set(track, { xPercent: xP });
-                foldScrollTrigger.to(track, { xPercent: xPEnd, ease: "none" }, 0);
+                gsap.set(track, { x: xStart });
+                foldScrollTrigger.to(track, { x: xEnd, ease: "none" }, 0);
             });
             foldsContent.forEach(content => {
                 gsap.set(content, { clearProps: 'transform,y' });
