@@ -2372,10 +2372,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             foldTracks.forEach((track, index) => {
                 const rowIdx = index % 4;
-                const [x, xEnd] = (rowIdx % 2 == 0) ? ["-10%", "-50%"] : ["-50%", "-10%"];
-                gsap.set(track, { clearProps: "transform,x" });
-                gsap.set(track, { x: x });
-                foldScrollTrigger.to(track, { x: xEnd, ease: "none" }, 0);
+                const [xP, xPEnd] = (rowIdx % 2 == 0) ? [-10, -50] : [-50, -10];
+                gsap.set(track, { clearProps: "transform,x,xPercent" });
+                gsap.set(track, { xPercent: xP });
+                foldScrollTrigger.to(track, { xPercent: xPEnd, ease: "none" }, 0);
             });
             foldsContent.forEach(content => {
                 gsap.set(content, { clearProps: 'transform,y' });
@@ -2410,7 +2410,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const [x, xEnd] = (rowIdx % 2 == 0) ? [-500, -1500] : [-500, 0];
             
             // Set initial state
-            gsap.set(track, { clearProps: "transform,x" });
+            gsap.set(track, { clearProps: "transform,x,xPercent" });
             gsap.set(track, { x: x });
             
             // Animate to end state
