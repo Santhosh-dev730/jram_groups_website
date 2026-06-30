@@ -1873,10 +1873,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Re-initialize GSAP on resize
+    // Re-initialize GSAP on resize only if width changes
+    let lastWidthSlider = window.innerWidth;
     window.addEventListener("resize", () => {
-        initGSAPSlider();
-        handleMobileScroll();
+        if (window.innerWidth !== lastWidthSlider) {
+            lastWidthSlider = window.innerWidth;
+            initGSAPSlider();
+            handleMobileScroll();
+        }
     });
 
     // Handle initial refresh check
@@ -2425,9 +2429,13 @@ document.addEventListener("DOMContentLoaded", () => {
     initFoldEffect();
 
     // Re-initialize on resize / load to ensure correct height calculations
+    let lastWidthFold = window.innerWidth;
     window.addEventListener("resize", () => {
-        initFoldEffect();
-        ScrollTrigger.refresh();
+        if (window.innerWidth !== lastWidthFold) {
+            lastWidthFold = window.innerWidth;
+            initFoldEffect();
+            ScrollTrigger.refresh();
+        }
     });
     window.addEventListener("load", () => {
         initFoldEffect();
