@@ -167,7 +167,7 @@ if (section && fill) {
     observer.observe(section);
 }
 
-const words = ["Websites", "Mobile Apps", "AI Systems", "Dashboards"];
+const words = ["Websites", "Mobile Apps", "E-Commerce", "Branding"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
