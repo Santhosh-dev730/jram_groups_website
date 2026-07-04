@@ -5731,6 +5731,14 @@ ul {
         padding: 12px 0 16px !important;
     }
 
+    .fold-effect-section .wrapper-3d {
+        perspective: 100vw !important;
+    }
+
+    .fold-effect-section .fold {
+        height: calc((50px + 0.5rem) * 3) !important;
+    }
+
     .fold-effect-section .fold-marquee {
         height: calc(50px + 0.5rem) !important;
         font-size: clamp(1.2rem, 5vw, 1.8rem) !important;

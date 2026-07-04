@@ -2461,17 +2461,15 @@ document.addEventListener("DOMContentLoaded", () => {
             foldScrollTrigger = null;
         }
 
-        // Allow pinning and 3D folding on mobile too
-
-
         const overflowHeight = centerContent.clientHeight - centerFold.clientHeight;
+        const scrollDistance = window.innerWidth <= 991 ? "+=250" : "+=500";
 
         // Create GSAP Timeline
         foldScrollTrigger = gsap.timeline({
             scrollTrigger: {
                 trigger: "#fold-section-trigger",
                 start: "center center",
-                end: "+=500", // Shorter scroll distance (500px) so scrolling past is faster and smoother
+                end: scrollDistance, // Shorter scroll distance on mobile
                 pin: "#fold-effect",
                 pinSpacing: true,
                 scrub: true,
@@ -2488,7 +2486,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // 2. Synchronized horizontal marquee scrolling (using hardware-accelerated GSAP transforms)
         foldTracks.forEach((track, index) => {
             const rowIdx = index % 3; // 3 rows inside each fold
-            const [x, xEnd] = (rowIdx % 2 == 0) ? [-500, -1500] : [-500, 0];
+            const [x, xEnd] = (rowIdx % 2 == 0) ? ["-80vw", "-150vw"] : ["-80vw", "-10vw"];
             
             // Set initial state
             gsap.set(track, { clearProps: "transform,x,xPercent" });
