@@ -5728,68 +5728,17 @@ ul {
 /* Fold Effect - Mobile Responsive */
 @media (max-width: 991px) {
     .fold-effect-section {
-        height: auto !important;
-        min-height: auto !important;
-        z-index: 12 !important;
-        overflow: hidden !important;
         padding: 12px 0 16px !important;
-    }
-
-    .fold-effect-section .screen {
-        height: auto !important;
-        position: relative !important;
-        display: block !important;
-        align-items: unset !important;
-        justify-content: unset !important;
-    }
-
-    .fold-effect-section .wrapper-3d {
-        perspective: none !important;
-        transform-style: flat !important;
-        width: 100% !important;
-        height: auto !important;
-    }
-
-    /* Show only center fold on mobile - hide top/bottom */
-    .fold-effect-section .fold-top,
-    .fold-effect-section .fold-bottom {
-        display: none !important;
-    }
-
-    .fold-effect-section .fold-center {
-        position: relative !important;
-        transform: none !important;
-        width: 100% !important;
-        height: auto !important;
-    }
-
-    .fold-effect-section .fold {
-        height: auto !important;
-        overflow: hidden !important;
-    }
-
-    .fold-effect-section .fold-align {
-        transform: none !important;
-        height: auto !important;
-    }
-
-    .fold-effect-section .fold-content {
-        transform: none !important;
     }
 
     .fold-effect-section .fold-marquee {
         height: calc(50px + 0.5rem) !important;
-        font-size: clamp(1rem, 4.5vw, 1.8rem) !important;
+        font-size: clamp(1.2rem, 5vw, 1.8rem) !important;
     }
 
     .fold-effect-section .fold-track {
-        position: relative !important;
-        white-space: nowrap !important;
         padding: 0.2rem 0 !important;
-        width: max-content !important;
     }
-
-
 }
 
 /* Extracted Inline Styles */

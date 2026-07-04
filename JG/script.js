@@ -2461,29 +2461,8 @@ document.addEventListener("DOMContentLoaded", () => {
             foldScrollTrigger = null;
         }
 
-        // On mobile/tablet: no pinning — CSS handles static display, but we keep horizontal scrolling
-        if (window.innerWidth <= 991) {
-            foldScrollTrigger = gsap.timeline({
-                scrollTrigger: {
-                    trigger: "#fold-section-trigger",
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: true,
-                    invalidateOnRefresh: true
-                }
-            });
-            foldTracks.forEach((track, index) => {
-                const rowIdx = index % 4;
-                const [xStart, xEnd] = (rowIdx % 2 == 0) ? ["-10vw", "-150vw"] : ["-150vw", "-10vw"];
-                gsap.set(track, { clearProps: "transform,x,xPercent" });
-                gsap.set(track, { x: xStart });
-                foldScrollTrigger.to(track, { x: xEnd, ease: "none" }, 0);
-            });
-            foldsContent.forEach(content => {
-                gsap.set(content, { clearProps: 'transform,y' });
-            });
-            return;
-        }
+        // Allow pinning and 3D folding on mobile too
+
 
         const overflowHeight = centerContent.clientHeight - centerFold.clientHeight;
 
