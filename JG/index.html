@@ -27,7 +27,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -560,11 +562,9 @@
                                                     <div class="d-flex align-items-center gap-2">
                                                         <!-- Avatar indicators -->
                                                         <div class="d-flex align-items-center gap-1">
-                                                            <img class="extracted-style-33"
-                                                                src="https://randomuser.me/api/portraits/women/44.jpg"
-                                                                alt="Jessica">
 
-                                                            <button class="extracted-style-34">Share</button>
+
+
                                                             <button class="extracted-style-35"><i
                                                                     class="fa-solid fa-ellipsis-vertical"></i></button>
                                                         </div>
@@ -791,15 +791,8 @@
                                                             </div>
                                                         </div>
 
-                                                        <!-- Jessica cursor floating on right panel -->
-                                                        <div class="wf-live-cursor extracted-style-77"
-                                                            id="jessicaCursor">
-                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                                                <path d="M0 0L0 10L3.5 7.5L5.5 12L7 11.5L5 6.5L9 6L0 0Z"
-                                                                    fill="#f59e0b" />
-                                                            </svg>
-                                                            <span class="extracted-style-78">Jessica</span>
-                                                        </div>
+
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -1192,7 +1185,7 @@
                                                             Landscape</button>
                                                     </div>
                                                     <span class="text-muted small extracted-style-13"><i
-                                                            class="fa-solid fa-info-circle"></i> Click Hero or List
+                                                            class="fa-solid fa-info-circle"></i> Click Hero
                                                         to toggle layout</span>
                                                 </div>
                                                 <div
@@ -1669,6 +1662,155 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Slide 5: Brand Designing -->
+                    <div class="services-slide">
+                        <div class="container">
+                            <div class="service-split-card row align-items-center py-4">
+                                <div class="col-lg-6 col-md-12 pe-lg-5 mb-5 mb-lg-0 service-content">
+                                    <div class="service-tag">Identity &amp; Vision</div>
+                                    <h2 class="service-title mb-4">Brand Designing</h2>
+                                    <p class="service-description mb-4">
+                                        Craft a memorable identity. We design logos and brand guidelines that speak to
+                                        your audience and elevate your business.
+                                    </p>
+
+                                    <div class="row g-4 sub-features">
+                                        <div class="col-sm-6">
+                                            <div class="sub-feature-card">
+                                                <div class="sub-icon-box bg-orange-soft">
+                                                    <i class="fa-solid fa-pen-nib text-orange"></i>
+                                                </div>
+                                                <h4 class="sub-title">Logo Design</h4>
+                                                <p class="sub-desc">Unique and modern logos that capture your brand's
+                                                    essence perfectly.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="sub-feature-card">
+                                                <div class="sub-icon-box bg-blue-soft">
+                                                    <i class="fa-solid fa-swatchbook text-blue"></i>
+                                                </div>
+                                                <h4 class="sub-title">Brand Guidelines</h4>
+                                                <p class="sub-desc">Comprehensive rulebooks for typography, colors, and
+                                                    asset usage.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 service-visual">
+                                    <div class="mockup-window interactive-mockup brand-mockup" id="brandMockupWindow">
+                                        <div class="mockup-header d-flex justify-content-between align-items-center">
+                                            <div class="mockup-header-left d-flex align-items-center gap-2">
+                                                <div class="mockup-dots"><span class="dot-red"></span><span
+                                                        class="dot-yellow"></span><span class="dot-green"></span></div>
+                                                <div class="mockup-logo-badge"><i class="fa-solid fa-bezier-curve"></i>
+                                                    Brand Studio</div>
+                                            </div>
+                                            <div class="mockup-header-right d-flex flex-nowrap gap-2">
+                                                <button class="mockup-tab-btn-brand active" data-tab-brand="logo">Logo
+                                                    Customizer</button>
+                                                <button class="mockup-tab-btn-brand"
+                                                    data-tab-brand="typography">Typography</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="mockup-body p-4 position-relative extracted-style-95"
+                                            id="brandInteractiveMockupBody" style="background: #f8fafc; height: 350px;">
+                                            <!-- LOGO CUSTOMIZER TAB -->
+                                            <div class="tab-pane-mockup active-pane w-100 h-100 d-flex flex-column align-items-center justify-content-center"
+                                                id="brandTabContentLogo">
+                                                <div class="brand-display-area w-100 bg-white rounded shadow-sm d-flex flex-column align-items-center justify-content-center mb-2 border"
+                                                    style="height: 160px; transition: all 0.4s ease;"
+                                                    id="brandLogoDisplay">
+                                                    <div class="d-flex align-items-center justify-content-center p-3">
+                                                        <img src="images/logo11.png" id="brandLogoImagePreview"
+                                                            alt="Jram Groups Logo"
+                                                            style="max-height: 50px; transition: all 0.4s ease; object-fit: contain;">
+                                                    </div>
+                                                    <div class="mt-2 text-muted small fw-medium" id="brandTagline"
+                                                        style="transition: all 0.4s ease; font-family: 'Inter', sans-serif;">
+                                                        Digital Disruption</div>
+                                                </div>
+
+                                                <div class="w-100 d-flex justify-content-between align-items-center bg-light border rounded px-3 py-2 mb-3"
+                                                    style="font-size: 0.75rem;">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <span class="fw-bold text-secondary">Colors:</span>
+                                                        <div class="d-flex gap-1" id="brandSwatches">
+                                                            <div class="rounded-circle border"
+                                                                style="width: 14px; height: 14px; background: #0f172a;">
+                                                            </div>
+                                                            <div class="rounded-circle border"
+                                                                style="width: 14px; height: 14px; background: #0ea5e9;">
+                                                            </div>
+                                                            <div class="rounded-circle border"
+                                                                style="width: 14px; height: 14px; background: #ffffff;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <span class="fw-bold text-secondary">Font:</span>
+                                                        <span class="badge bg-secondary text-white"
+                                                            id="brandFontName">Inter</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="w-100 d-flex gap-2 justify-content-center flex-wrap"
+                                                    id="brandStyleButtonsContainer">
+                                                    <button class="btn btn-sm btn-outline-dark brand-style-btn active"
+                                                        data-style="discovery">1. Discovery</button>
+                                                    <button class="btn btn-sm btn-outline-dark brand-style-btn"
+                                                        data-style="ideation">2. Ideation</button>
+                                                    <button class="btn btn-sm btn-outline-dark brand-style-btn"
+                                                        data-style="refinement">3. Refinement</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- TYPOGRAPHY TAB -->
+                                            <div class="tab-pane-mockup w-100 h-100 d-none flex-column align-items-center justify-content-center"
+                                                id="brandTabContentTypography">
+                                                <div class="w-100 bg-white rounded shadow-sm p-4 border"
+                                                    style="height: 100%;">
+                                                    <h3 class="mb-3" id="typoHeading"
+                                                        style="font-family: 'Inter', sans-serif; color: #0f172a;">Aa -
+                                                        Typography Scale</h3>
+                                                    <div class="mb-3 border-bottom pb-2">
+                                                        <div class="small text-muted mb-1">Heading 1</div>
+                                                        <div id="typoH1"
+                                                            style="font-family: 'Inter', sans-serif; font-size: 1.8rem; font-weight: bold; color: #0f172a;">
+                                                            Jram Groups Strategy</div>
+                                                    </div>
+                                                    <div class="mb-3 border-bottom pb-2">
+                                                        <div class="small text-muted mb-1">Heading 2</div>
+                                                        <div id="typoH2"
+                                                            style="font-family: 'Inter', sans-serif; font-size: 1.4rem; font-weight: 600; color: #0f172a;">
+                                                            Driving Digital Transformation</div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="small text-muted mb-1">Paragraph</div>
+                                                        <p id="typoP"
+                                                            style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #475569; line-height: 1.5;">
+                                                            At Jram Groups, our typography is designed to communicate
+                                                            clarity, innovation, and authority. The right typeface
+                                                            ensures our digital presence resonates with modern
+                                                            enterprises.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Floating Guest Cursor -->
+                                        <div class="mock-floating-cursor extracted-style-113" id="brandGuestCursor">
+                                            <img src="https://cdn.prod.website-files.com/6177739448baa66404ce1d9c/65b1a12e3211534c63d294b5_Guest%20Green%20Cursor.png"
+                                                width="42" alt="Cursor">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div> <!-- End of services-horizontal-track -->
 
 
@@ -1713,15 +1855,6 @@
                                         class="fold-focus">Limits.</span>
                                 </div>
                             </div>
-                            <div class="fold-marquee">
-                                <div class="fold-track">
-                                    <span class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits.
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1754,15 +1887,6 @@
                                         class="fold-focus">Limits.</span> Create beyond <span
                                         class="fold-focus">Limits.</span> Create beyond <span
                                         class="fold-focus">Limits.</span>
-                                </div>
-                            </div>
-                            <div class="fold-marquee">
-                                <div class="fold-track">
-                                    <span class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits.
                                 </div>
                             </div>
                         </div>
@@ -1799,15 +1923,6 @@
                                         class="fold-focus">Limits.</span>
                                 </div>
                             </div>
-                            <div class="fold-marquee">
-                                <div class="fold-track">
-                                    <span class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits. <span
-                                        class="fold-focus">Create</span> beyond Limits.
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1818,8 +1933,8 @@
     <!-- NEW SCALING SECTION -->
     <section class="scaling-companies-section py-5">
         <div class="container">
-            <h2 class="scaling-title text-center mb-5">Scaling Successful Companies <img
-                    style="width: 45px; margin-top: -20px; margin-left: 10px; transform: rotate(15deg);"></h2>
+            <h2 class="scaling-title text-center mb-5 position-relative">Scaling Successful Companies <img
+                    style="position: absolute; width: 45px; margin-top: -20px; margin-left: 10px; transform: rotate(15deg);"></h2>
 
             <div class="scaling-bento-grid">
                 <!-- Box 1: Dream Team -->

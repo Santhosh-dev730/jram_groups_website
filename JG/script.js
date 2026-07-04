@@ -957,9 +957,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     // --- AUTOMATIC INTERACTIVE DEMOS FOR ALL SLIDES (Added by Antigravity) ---
-    let isDemoRunning = [false, false, false, false];
-    let demoInteracted = [false, false, false, false];
-    let demoTimeouts = [[], [], [], []];
+    let isDemoRunning = [false, false, false, false, false];
+    let demoInteracted = [false, false, false, false, false];
+    let demoTimeouts = [[], [], [], [], []];
     let activeSlideIndex = 0;
     const originalSitemapHTML = sitemapState ? sitemapState.innerHTML : "";
 
@@ -1597,9 +1597,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function activateSlideDemo(slideIdx) {
-        if (slideIdx < 0 || slideIdx > 3) return;
+        if (slideIdx < 0 || slideIdx > 4) return;
         
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 5; i++) {
             if (i !== slideIdx) {
                 stopSlideDemo(i, false);
             }
@@ -1614,12 +1614,89 @@ document.addEventListener("DOMContentLoaded", () => {
                 else if (slideIdx === 1) startEcomDemo();
                 else if (slideIdx === 2) startMobileDemo();
                 else if (slideIdx === 3) startDmDemo();
+                else if (slideIdx === 4) startBrandDemo();
             }
         }, 800);
     }
 
+    function startBrandDemo() {
+        if (window.innerWidth <= 991) return;
+        if (demoInteracted[4]) return;
+        isDemoRunning[4] = true;
+
+        const gCursor = document.getElementById("brandGuestCursor");
+        const mBody = document.getElementById("brandInteractiveMockupBody");
+        if (!gCursor || !mBody) return;
+
+        const brandTabButtons = document.querySelectorAll(".mockup-tab-btn-brand");
+        if (brandTabButtons[0]) brandTabButtons[0].click();
+
+        const styleBtns = document.querySelectorAll('.brand-style-btn');
+        if (styleBtns[0]) styleBtns[0].click(); // Reset to Corporate
+
+        gCursor.style.opacity = "1";
+        gCursor.style.transition = "left 1.2s cubic-bezier(0.25, 1, 0.5, 1), top 1.2s cubic-bezier(0.25, 1, 0.5, 1)";
+        gCursor.style.left = "10%";
+        gCursor.style.top = "70%";
+
+        // Step 1: Move to FinTech style button
+        scheduleDemo(4, () => {
+            if (styleBtns[1]) moveCursorToElement(gCursor, mBody, styleBtns[1]);
+        }, 1500);
+
+        // Step 2: Click FinTech
+        scheduleDemo(4, () => {
+            if (styleBtns[1]) styleBtns[1].click();
+        }, 3000);
+
+        // Step 3: Move to Eco Finance
+        scheduleDemo(4, () => {
+            if (styleBtns[2]) moveCursorToElement(gCursor, mBody, styleBtns[2]);
+        }, 4500);
+
+        // Step 4: Click Eco Finance
+        scheduleDemo(4, () => {
+            if (styleBtns[2]) styleBtns[2].click();
+        }, 6000);
+
+        // Step 5: Move to Corporate (back to default)
+        scheduleDemo(4, () => {
+            if (styleBtns[0]) moveCursorToElement(gCursor, mBody, styleBtns[0]);
+        }, 7500);
+
+        // Step 6: Click Corporate
+        scheduleDemo(4, () => {
+            if (styleBtns[0]) styleBtns[0].click();
+        }, 9000);
+
+        // Step 7: Move to Typography Tab
+        scheduleDemo(4, () => {
+            if (brandTabButtons[1]) moveCursorToElement(gCursor, mBody, brandTabButtons[1]);
+        }, 11000);
+
+        // Step 8: Click Typography Tab
+        scheduleDemo(4, () => {
+            if (brandTabButtons[1]) brandTabButtons[1].click();
+        }, 12500);
+
+        // Step 9: Move back to Logo Customizer Tab
+        scheduleDemo(4, () => {
+            if (brandTabButtons[0]) moveCursorToElement(gCursor, mBody, brandTabButtons[0]);
+        }, 14500);
+
+        // Step 10: Click Logo Customizer Tab
+        scheduleDemo(4, () => {
+            if (brandTabButtons[0]) brandTabButtons[0].click();
+        }, 16000);
+
+        // Step 11: Loop back
+        scheduleDemo(4, () => {
+            startBrandDemo();
+        }, 18000);
+    }
+
     function stopSlideDemo(slideIdx, markInteracted = true) {
-        if (slideIdx < 0 || slideIdx > 3) return;
+        if (slideIdx < 0 || slideIdx > 4) return;
         
         if (markInteracted) {
             demoInteracted[slideIdx] = true;
@@ -1766,7 +1843,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const servicesSectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) {
-                for (let i = 0; i < 4; i++) {
+                for (let i = 0; i < 5; i++) {
                     stopSlideDemo(i, false);
                 }
             } else {
@@ -1842,7 +1919,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Update active indicator dot
-            const activeCardIdx = Math.min(3, Math.round(trackScrollLeft / window.innerWidth));
+            const activeCardIdx = Math.min(4, Math.round(trackScrollLeft / window.innerWidth));
             sliderIndicatorDots.forEach((dot, idx) => {
                 if (idx === activeCardIdx) {
                     dot.classList.add("active");
@@ -1873,8 +1950,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (trigger) {
                     const startY = trigger.start;
                     const totalScrollHeight = trigger.end - trigger.start;
-                    // There are 4 slides, index is 0, 1, 2, 3. The target progress for slide idx is idx / 3
-                    const targetScrollY = startY + (idx / 3) * totalScrollHeight;
+                    // There are 5 slides, index is 0, 1, 2, 3, 4. The target progress for slide idx is idx / 4
+                    const targetScrollY = startY + (idx / 4) * totalScrollHeight;
                     window.scrollTo({
                         top: targetScrollY,
                         behavior: "smooth"
@@ -1884,7 +1961,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const sectionTop = stickySection.offsetTop;
                     const sectionHeight = stickySection.offsetHeight;
                     const maxScroll = sectionHeight - window.innerHeight;
-                    const targetScrollY = sectionTop + (idx / 3) * maxScroll;
+                    const targetScrollY = sectionTop + (idx / 4) * maxScroll;
                     window.scrollTo({
                         top: targetScrollY,
                         behavior: "smooth"
@@ -2414,7 +2491,7 @@ document.addEventListener("DOMContentLoaded", () => {
         foldScrollTrigger = gsap.timeline({
             scrollTrigger: {
                 trigger: "#fold-section-trigger",
-                start: "top top",
+                start: "center center",
                 end: "+=500", // Shorter scroll distance (500px) so scrolling past is faster and smoother
                 pin: "#fold-effect",
                 pinSpacing: true,
@@ -2431,7 +2508,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 2. Synchronized horizontal marquee scrolling (using hardware-accelerated GSAP transforms)
         foldTracks.forEach((track, index) => {
-            const rowIdx = index % 4; // 4 rows inside each fold
+            const rowIdx = index % 3; // 3 rows inside each fold
             const [x, xEnd] = (rowIdx % 2 == 0) ? [-500, -1500] : [-500, 0];
             
             // Set initial state
@@ -2466,4 +2543,130 @@ document.addEventListener("DOMContentLoaded", () => {
         initFoldEffect();
         ScrollTrigger.refresh();
     }, 200);
+    // Brand Designing Mockup Logic
+    const brandStyleBtns = document.querySelectorAll('.brand-style-btn');
+    const brandLogoImagePreview = document.getElementById('brandLogoImagePreview');
+    const brandLogoDisplay = document.getElementById('brandLogoDisplay');
+    const brandTagline = document.getElementById('brandTagline');
+    const brandFontName = document.getElementById('brandFontName');
+    const brandSwatches = document.getElementById('brandSwatches');
+
+    const brandStyles = {
+        'discovery': { 
+            logoFilter: 'grayscale(100%) opacity(70%)', 
+            color: '#0ea5e9', 
+            textColor: '#0f172a',
+            font: "'Inter', sans-serif", 
+            fontName: "Inter",
+            bg: '#ffffff', 
+            tagline: 'Digital Disruption',
+            swatches: ['#0f172a', '#0ea5e9', '#ffffff']
+        },
+        'ideation': { 
+            logoFilter: 'hue-rotate(150deg) saturate(150%)', 
+            color: '#f97316', 
+            textColor: '#1e293b',
+            font: "'Playfair Display', serif", 
+            fontName: "Playfair Display",
+            bg: '#f8fafc', 
+            tagline: 'Innovate & Scale',
+            swatches: ['#1e293b', '#f97316', '#f8fafc']
+        },
+        'refinement': { 
+            logoFilter: 'none', 
+            color: '#8b5cf6', 
+            textColor: '#0f172a',
+            font: "'Nunito', sans-serif", 
+            fontName: "Nunito",
+            bg: '#faf5ff', 
+            tagline: 'Empowering Businesses',
+            swatches: ['#0f172a', '#8b5cf6', '#faf5ff']
+        }
+    };
+
+    if (brandStyleBtns.length > 0) {
+        brandStyleBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active from all
+                brandStyleBtns.forEach(b => b.classList.remove('active'));
+                // Add active to clicked
+                this.classList.add('active');
+                
+                const styleKey = this.getAttribute('data-style');
+                const config = brandStyles[styleKey];
+                
+                if (config && brandLogoDisplay) {
+                    // Update image filter
+                    if (brandLogoImagePreview) {
+                        brandLogoImagePreview.style.filter = config.logoFilter;
+                    }
+                    
+                    // Update Tagline
+                    if (brandTagline) {
+                        brandTagline.innerText = config.tagline;
+                        brandTagline.style.color = config.textColor;
+                        brandTagline.style.opacity = 0.8;
+                    }
+                    
+                    // Update bg
+                    brandLogoDisplay.style.backgroundColor = config.bg;
+                    
+                    // Update Font Name Badge
+                    if (brandFontName) {
+                        brandFontName.innerText = config.fontName;
+                    }
+                    
+                    // Update Swatches
+                    if (brandSwatches && config.swatches.length === 3) {
+                        brandSwatches.innerHTML = `
+                            <div class="rounded-circle border" style="width: 14px; height: 14px; background: ${config.swatches[0]};"></div>
+                            <div class="rounded-circle border" style="width: 14px; height: 14px; background: ${config.swatches[1]};"></div>
+                            <div class="rounded-circle border" style="width: 14px; height: 14px; background: ${config.swatches[2]};"></div>
+                        `;
+                    }
+                    
+                    // Update Typography pane if it exists
+                    const typoHeading = document.getElementById('typoHeading');
+                    const typoH1 = document.getElementById('typoH1');
+                    const typoH2 = document.getElementById('typoH2');
+                    if (typoHeading && typoH1 && typoH2) {
+                        typoHeading.style.fontFamily = config.font;
+                        typoHeading.style.color = config.textColor;
+                        typoH1.style.fontFamily = config.font;
+                        typoH1.style.color = config.textColor;
+                        typoH2.style.fontFamily = config.font;
+                        typoH2.style.color = config.textColor;
+                    }
+                }
+            });
+        });
+    }
+
+    // --- BRAND DESIGNING TABS ---
+    const brandTabButtons = document.querySelectorAll(".mockup-tab-btn-brand");
+    const brandTabPanes = {
+        logo: document.getElementById("brandTabContentLogo"),
+        typography: document.getElementById("brandTabContentTypography")
+    };
+
+    brandTabButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const targetTab = btn.getAttribute("data-tab-brand");
+            brandTabButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            Object.keys(brandTabPanes).forEach(paneKey => {
+                if (brandTabPanes[paneKey]) {
+                    if (paneKey === targetTab) {
+                        brandTabPanes[paneKey].classList.remove("d-none");
+                        brandTabPanes[paneKey].classList.add("d-flex");
+                    } else {
+                        brandTabPanes[paneKey].classList.remove("d-flex");
+                        brandTabPanes[paneKey].classList.add("d-none");
+                    }
+                }
+            });
+        });
+    });
+
 });

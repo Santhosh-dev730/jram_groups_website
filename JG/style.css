@@ -1487,7 +1487,8 @@ html {
 .mockup-tab-btn,
 .mockup-tab-btn-mobile,
 .mockup-tab-btn-ecom,
-.mockup-tab-btn-dm {
+.mockup-tab-btn-dm,
+.mockup-tab-btn-brand {
     font-size: 0.6rem;
     font-weight: 700;
     color: #64748b;
@@ -1505,7 +1506,9 @@ html {
 .mockup-tab-btn-ecom.active,
 .mockup-tab-btn-ecom:hover,
 .mockup-tab-btn-dm.active,
-.mockup-tab-btn-dm:hover {
+.mockup-tab-btn-dm:hover,
+.mockup-tab-btn-brand.active,
+.mockup-tab-btn-brand:hover {
     color: #000;
     background: #f1f5f9;
 }
@@ -3592,6 +3595,7 @@ ul {
     .git-cards-container {
         justify-content: center;
         gap: 20px;
+        flex-wrap: wrap;
     }
 
     .git-divider {
@@ -5444,6 +5448,25 @@ ul {
         min-height: 380px !important;
     }
 
+    .mockup-tab-btn[data-tab="style"],
+    .mockup-tab-btn-ecom[data-tab-ecom="analytics"],
+    .mockup-tab-btn-dm[data-tab-dm="analytics"] {
+        display: none !important;
+    }
+
+    .wf-canvas-panels {
+        padding: 10px !important;
+        gap: 10px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .wf-panel {
+        min-height: auto !important;
+        height: auto !important;
+        padding-bottom: 20px;
+    }
+
     .service-content.mb-5,
     .service-content.mb-lg-0 {
         margin-bottom: 1.5rem !important;
@@ -5591,7 +5614,7 @@ ul {
 
 /* 3D Fold Effect Marquee Section */
 .fold-effect-section {
-    min-height: 100vh;
+    padding: 50px 0;
     background-color: #efefef;
     position: relative;
     overflow: visible;
@@ -5601,7 +5624,7 @@ ul {
 
 .fold-effect-section .screen {
     position: relative;
-    height: 100vh;
+    height: auto;
     width: 100%;
     display: flex;
     align-items: center;
@@ -5618,7 +5641,7 @@ ul {
 .fold-effect-section .fold {
     overflow: hidden;
     width: 100vw;
-    height: 80vh;
+    height: calc((100px + 2rem) * 3);
 }
 
 .fold-effect-section .fold-top {
@@ -6681,4 +6704,28 @@ ul {
 
 .git-main-title {
     font-size: 3.5rem !important;
+}
+
+@media (max-width: 991px) {
+    .git-main-title {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* Brand Mockup Styles */
+.brand-style-btn {
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.brand-style-btn.active, .brand-style-btn:hover {
+    background-color: #1e293b;
+    color: white;
+    border-color: #1e293b;
+}
+
+
+#brandLogoDisplay {
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
 }
